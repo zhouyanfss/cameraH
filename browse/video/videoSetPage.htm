@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+window.onbeforeunload=function(){
+	try{
+		var player = document.getElementById("Player");
+		player.StopPlay();
+	}catch(e){};
+}
+window.onload=function(){play();};
+var timeID=0;
+function getCookie(name){
+	var cookieHank = document.cookie;
+	var cookieName = encodeURIComponent(name) + "=";
+	var cookieStart = cookieHank.indexOf(cookieName);
+	var cookieValue = null;
+	if(cookieStart > -1){
+		var cookieEnd = cookieHank.indexOf(";", cookieStart);
+		if(cookieEnd == -1){
+			cookieEnd = cookieHank.length;
+		}
+		cookieValue = decodeURIComponent(cookieHank.substring(cookieStart + cookieName.length, cookieEnd));
+	}
+	return cookieValue;
+}
+function play(){
+	try{
+		var player = document.getElementById("Player");
+		var streamMode = 0;
+		var parentWin = window.parent;
+		var dataGet = window.location.toString().split("?");
+		if(dataGet.length == 1){
+			streamMode = 0;
+			if( 2 == parentWin.jsVideoList){
+				parentWin.jsVideoList = 0;
+				setTimeout(function(){parentWin.videoShow(2)},500);
+			}
+		}else{
+			var stream = dataGet[1].split("=");
+			if( '0' == stream[1]){
+				streamMode = 0;
+			}else if( '1' == stream[1]){
+				streamMode = 1;
+			}else{
+				streamMode = 0;
+				parentWin.jsVideoList = 0;
+				setTimeout(function(){parentWin.videoShow(stream[1])},500);
+			}
+		}
+		var ipAddr =window.location.hostname;
+		var port=parseInt(top.topFrame.document.getElementById('videoPort').value)||90;
+		var playMode = "1"==getCookie("playMode")? 1:0;
+		setTimeout(
+			function(){
+				try{
+					parentWin.player = null;
+					player.RunPlayEx(ipAddr,0,"0.0.0.0",2,port,streamMode,"admin","admin");
+					player.SetPlaySmoothLevel(playMode, 0);
+					parentWin.player = player;
+				}catch(e){clearTimeout(timeID);timeID=setTimeout(play, 500);};
+			},10);
+	}catch(e){clearTimeout(timeID);timeID=setTimeout(play, 500);};
+}
+</script>
+
+</head>
+<body style=" width: 480px; height: 270px; margin: 0; padding: 0; border: none; background-color:transparent;">
+	<object id="Player" width="480" height="270" border="0" classid="clsid:BF55C34E-FB1B-4FAF-8C1D-82C5265D87D9" codebase="../video/IPC_PlayerAX.cab#version=2,0,0,7" standby="Waiting..." viewastext>
+		<PARAM NAME="_Version" VALUE="65536">
+		<PARAM NAME="_ExtentX" VALUE="19050">
+		<PARAM NAME="_ExtentY" VALUE="12700">
+		<PARAM NAME="_StockProps" VALUE="0">
+	</object>
+</body>
+</html>

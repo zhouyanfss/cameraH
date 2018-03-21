@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>MJPEG Image</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="../javascript/jquery.js"></script>
+<script type="text/javascript" src="../javascript/imageProcess.js"></script>
+<script language="JavaScript" type="text/JavaScript">
+function Click(){window.event.returnValue=false;}
+document.oncontextmenu=Click; 
+</script>
+
+</head>
+<body onLoad="initMjpegVideosize();fun();" onunload="stopRequest();for(var i=0; i<10000; i++);"  style="margin:0; padding:0; background-color:#FFFFFF">
+    <form id="f1">  	
+		<div id="imageDiv1" align="center">
+			<img id="myImg1" galleryimg="no" />
+			<img id="myImg2" galleryimg="no" />
+		</div>
+	
+		<input type="button" onClick="restart();" ID="btnRestart" style="display:none" />
+		<input type="button" onClick="stopRequest();" ID="btnStop" style="display:none" />
+	</form>
+
+</body>
+</html>

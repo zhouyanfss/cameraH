@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Shot Mjpeg</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+body {
+	font-family:Verdana, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+</style>
+<script type="text/javascript" language="javascript">
+function initImage()
+{
+	document.getElementById("shotImg").src = "http://" + location.host + "/jpgimage/1/image.jpg?key=" + (new Date()).getTime();
+	temp.location = shotImg.src;
+	var la = window.navigator.systemLanguage.toLowerCase();
+	if(la == "zh-cn") altImg = "点击图片保存";
+	else altImg = "Click on image to save";
+	document.getElementById("txt").innerText = altImg;
+}
+function saveAsImg()
+{
+	setTimeout('temp.document.execCommand("saveas",true,false)',100);
+}
+</script> 
+</head>
+<body onLoad="initImage();">
+<div align="center">
+<br /><label id="txt"></label><br /><br />
+<iframe id="temp" name="temp" style="display:none ;"></iframe>
+<img src="../images/hkvision_mjpeg.gif" id="shotImg" style="cursor:pointer" onclick="saveAsImg()" width="720" height="550" />
+</div>
+</body>
+</html>

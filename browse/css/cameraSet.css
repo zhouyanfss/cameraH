@@ -1,0 +1,314 @@
+html{
+	overflow:scroll;
+	background-color:#F9F6F6;
+}
+body{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	margin:0;
+	background-color:#F9F6F6;
+}
+form{
+	margin:0;
+	padding:0;
+}
+body table tr td{
+	height:30px;
+	text-align:center;
+}
+.bigbt1 {
+	background-color:#CFDFEF;
+	FONT-SIZE:14px; 
+	FONT-STYLE: normal; 
+	FONT-VARIANT: normal; 
+	FONT-WEIGHT: normal; 
+	HEIGHT: 30px; 
+	WIDTH:140px;
+	LINE-HEIGHT: normal;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	border:0;
+	margin-top:60px;
+}
+
+.playerWin{
+	height: 300px;
+	width: 900px;
+	margin-left: 110px;
+	margin-top:15px;
+}
+.playerDiv{
+	width:480px; 
+	height:270px; 
+	border: 1px solid #777;
+	float:left;
+}
+.cameraDiv{
+	width:900px;
+	margin-left:110px;
+	padding-top: 345px;
+	/*margin-top:30px;*/
+	display:none;
+}
+.basic{
+	width:300px;
+	float:left;
+}
+#basic{
+	width:270px;
+	float:left;
+}
+#AE{
+	float:left;
+	width:550px;
+}
+#imageDiv{
+	width:450px;
+	margin-top:20px;
+}
+#msgDiv{
+	display:none;
+	height:30px;
+	
+}
+/*mode*/
+.modulate {
+	width:450px;
+	height:25px;
+	padding-bottom:10px;
+}
+#imageAdjust{ 
+	width:570px;
+}
+#modeSet{
+	width:240px;
+	display:inline;
+	float:left;
+}
+#modeEdit{
+	width:280px;
+	/*background-color:#06C;*/
+	float:left;
+	margin-left:30px;
+	height:320px;
+	}
+.timeText{
+	width:20px;
+}
+.mode_select{
+	width:68px;
+}
+.videoSet_select{ 
+	width:110px; 
+	margin:auto;
+}
+.mode_name_text{
+	width:104px;  
+	height:15px;
+}
+.mode_editDiv{
+	height:25px;
+}
+.mode_editDiv label{
+	float:left;
+	width:95px;
+	margin-top:2px;
+	display:block;
+}
+.slider{
+	float:left;
+	width:150px;
+	margin-top:2px;	
+}
+.sliderDiv{
+	height:25px;
+}
+.sliderLabel{
+	width:60px;
+	float: left;
+	text-align:left;
+	margin-top:2px;
+}
+.editSliderDiv{
+	margin-top:8px;
+	margin-bottom:10px;
+}
+.generalSave{
+	margin-left:80px;
+	margin-top:10px;
+}
+#WBDiv{
+	width:270px;
+}
+.modeTitle{
+	margin-bottom:10px;		
+}
+.modeTable{
+	width:240px;
+	border:1px #C8C8C8 solid ;
+}
+.modeTable tr td{
+	border:#C8C8C8 solid 1px;;
+	border:1px #C8C8C8 solid;
+	padding:0;
+	margin:0;
+}
+/*div BASIC*/
+.UnitDiv{
+	height:25px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	border: 0;
+}
+.UnitDivWB{
+	height:25px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	border: 0;
+}
+.UnitDivWB select{
+	margin-top:2px;
+	width:110px
+}
+.basicLabel{
+	width:90px;
+	float: left;
+	text-align:left;
+	margin-top:4px;
+}
+.WBbasicLabel{
+	width:80px;
+	float: left;
+	text-align:left;
+	margin-top:2px;
+}
+.basicRadio{
+	float: left;
+	width: 85px;
+	margin-top:3px;
+}
+.basicSave{
+	margin-left:50px;
+}
+.AESave{
+	margin-left:50px;
+	margin-top:29px;
+}
+.PNDiv{
+	margin-top:5px;
+	margin-left:135px;
+}
+/*div AE*/
+.divAE{
+
+	height:25px;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+.divAE select{
+	width:110px;
+	float:left;
+	margin-top:2px;
+}
+.AELabel1{
+	width:88px;
+	margin-top:4px;
+	float:left;
+	display:block;
+}
+.AESlider{
+	float:left;
+	width:130px;
+	margin-top:4px;
+}
+.AESliderText{
+	float:left;
+	width:70px;
+	margin-top:4px;
+}
+/*img adjust slider*/
+.imgSlider{
+	float:left;
+	width:150px;
+	margin-top:2px;	
+}
+.factorySetBtn{
+	background-color:#CFDFEF;
+	font-size:14px;
+	padding: 0;
+	border: 0;	
+	height: 30px;
+	width: 81px; 
+	margin-bottom: 0px;
+	margin-top:5px;
+}
+
+.ButtonSet{
+	background-color:#CFDFEF;
+	font-size:14px;
+	padding: 0;
+	border: 0;	
+	height: 30px;
+	width: 81px; 
+	margin-bottom: 0px;
+	margin-top:5px;
+}
+.sliderText{
+	width:30px; 
+	border:none; 
+	background-color:transparent;
+	float:left;
+	margin-top:2px;
+}
+.sliderTextSh{
+	width:50px; 
+	border:none; 
+	background-color:transparent;
+}
+.clear{
+	clear:both;
+}
+/**AF****/
+.specialLable{
+	float:left;
+	display:inline;
+	}
+
+.AFDiv{
+	 margin-left:15px;
+	 padding-top:15px;
+	 height:45px; 	  
+}
+.AFButtonDiv{
+	margin-top:18px;
+}	
+.regUnit{
+	float:left;
+	width:100px;
+	height:34px;
+	margin-right:20px;
+}
+.radioLabel{
+	display:block;
+	float:left;
+	width:50px;
+	margin-top:6px;
+}
+.afButton {
+	background-color:#CFDFEF;
+	FONT-SIZE:14px; 
+	FONT-STYLE: normal; 
+	FONT-VARIANT: normal; 
+	FONT-WEIGHT: normal; 
+	HEIGHT: 30px; 
+	WIDTH:100px;
+	LINE-HEIGHT: normal;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	border:0;
+}
+.AFButtonSet{
+	background-color:#CFDFEF;
+	font-size:14px;
+	border: 0;	
+	height: 30px;
+	width: 81px; 
+}

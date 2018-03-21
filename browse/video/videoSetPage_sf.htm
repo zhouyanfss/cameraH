@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+window.onbeforeunload=function(){
+	try{
+		var player = document.getElementById("Player");
+		player.StopPlay();
+	}catch(e){};
+}
+window.onload=function(){play();};
+var timeID=0;
+function getCookie(name){
+	var cookieHank = document.cookie;
+	var cookieName = encodeURIComponent(name) + "=";
+	var cookieStart = cookieHank.indexOf(cookieName);
+	var cookieValue = null;
+	if(cookieStart > -1){
+		var cookieEnd = cookieHank.indexOf(";", cookieStart);
+		if(cookieEnd == -1){
+			cookieEnd = cookieHank.length;
+		}
+		cookieValue = decodeURIComponent(cookieHank.substring(cookieStart + cookieName.length, cookieEnd));
+	}
+	return cookieValue;
+}
+function play(){
+	try{
+		var player = document.getElementById("Player");
+		var streamMode = 0;
+		var parentWin = window.parent;
+		var dataGet = window.location.toString().split("?");
+		if(dataGet.length == 1){
+			streamMode = 0;
+			if( 2 == parentWin.jsVideoList){
+				parentWin.jsVideoList = 0;
+				setTimeout(function(){parentWin.videoShow(2)},500);
+			}
+		}else{
+			var stream = dataGet[1].split("=");
+			if( '0' == stream[1]){
+				streamMode = 0;
+			}else if( '1' == stream[1]){
+				streamMode = 1;
+			}else{
+				streamMode = 0;
+				parentWin.jsVideoList = 0;
+				setTimeout(function(){parentWin.videoShow(stream[1])},500);
+			}
+		}
+		var ipAddr =window.location.hostname;
+		var port=parseInt(top.topFrame.document.getElementById('videoPort').value)||90;
+		var playMode = "1"==getCookie("playMode")? 1:0;
+		player.qtsrc = 'rtsp://' + 'ipAddr' + '/1/h264minor';
+		player.play();
+		setTimeout(
+			function(){
+				try{
+					parentWin.player = null;
+					player.RunPlayEx(ipAddr,0,"0.0.0.0",2,port,streamMode,"admin","admin");
+					player.SetPlaySmoothLevel(playMode, 0);
+					parentWin.player = player;
+				}catch(e){clearTimeout(timeID);timeID=setTimeout(play, 500);};
+			},10);
+	}catch(e){clearTimeout(timeID);timeID=setTimeout(play, 500);};
+}
+</script>
+
+</head>
+<body style=" width: 480px; height: 270px; margin: 0; padding: 0; border: none; background-color:transparent;">
+	<!--<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+		<embed id="Player" src="#" qtsrc="" type="video/quicktime" scale="tofit" width="480" height="270" autoplay="true" controller="false" pluginspage="http://www.apple.com/quicktime/download/">
+        </embed>
+	</object>-->
+<script language="javascript">
+	var streamMode = 0;
+	var dataGet = window.location.toString().split("?");
+	if(dataGet.length == 1){
+		streamMode = 0;
+	}else{
+		var stream = dataGet[1].split("=");
+		if( '0' == stream[1]){
+			streamMode = 0;
+		}else if( '1' == stream[1]){
+			streamMode = 1;
+		}else{
+			streamMode = 0;
+		}
+	}
+	document.write('<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab">');
+	document.write('<embed id="Player" src="#" qtsrc="rtsp://');
+	document.write(window.location.hostname);
+	document.write(':');
+	document.write(top.topFrame.document.getElementById('rtspPort').value.toString()||'554');
+	if(streamMode == 0)
+		document.write('/1/h264major');
+	else
+		document.write('/1/h264minor');
+	document.write('" type="video/quicktime" scale="tofit" width="480" height="270" autoplay="true" controller="false" pluginspage="http://www.apple.com/quicktime/download/"></embed>');
+	document.write('</object>');
+</script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+﻿@charset "utf-8";
+html{
+	overflow:scroll;
+	background-color:#F9F6F6;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	font-size:14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+form{
+	margin:0
+	}
+
+.topMenu{
+	width: 99%;
+	min-width: 750px;
+	height: 30px;
+	border-bottom: #BBB 1px solid;
+	overflow:visible;
+	margin-bottom: 1px;
+	margin-left: 1px;
+}
+
+.topMenu ul{
+	height: 29px;
+	margin: 0px;
+	margin-bottom: 0px;
+	padding: 0;
+}
+
+.choose{
+	width: 150px;
+	height: 28px;
+	margin: 0;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 32px;
+	list-style: none;
+	float: left;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+	border-right:1px #F9F6F6 solid;
+	border-bottom:1px #F9F6F6 solid;
+	border-top:1px #F9F6F6 solid;
+	background-color:#F2F2F2;
+	padding: 0;
+}
+
+.ptzFunWin{
+	height: 300px;
+	width: 710px;
+	margin-left: 110px;
+	margin-top:15px;
+}
+
+.playerWin{
+	float: left;
+	height: 270px;
+	width: 480px;
+	border: 1px solid #777;
+}
+.ptzWin{
+	height: 300px;
+	width:220px;
+	float: right;
+}
+
+.hankYunTai{
+	width:780px;
+	height: 260px;
+	margin-left: 110px;
+	margin-top: 0px;
+	display:none;
+}
+
+.posHank{
+	margin-top:4px;
+}
+.posHank label{
+	display:inline-block;
+	width: 110px;
+}
+.posHank select{
+	width: 50px;
+	font-size:14px;
+}
+.titleSave{
+	background-color:#CFDFEF;
+	background-repeat: no-repeat;
+	font-size: 14px;
+	padding: 0;
+	border:0;	
+	height: 30px;
+	width: 81px;
+	margin-left: 4px;
+	display:inline-block;
+
+}
+
+.titleText{
+	font-size:14px;
+}
+
+.posBto{
+	background-color:#CFDFEF;
+	background-repeat: no-repeat;
+	font-size: 14px;
+	padding: 0;
+	border:0;	
+	height: 30px;
+	width: 81px;
+	margin-left: 4px;
+	float: left;
+	display:inline-block;
+}
+
+.horiHank{
+	margin-top: 4px;
+}
+.horiHank label{
+	width: 110px;
+	display:inline-block;
+}
+.horiHank select{
+	width: 70px;
+	font-size:14px;
+}
+
+.autoBack{
+	margin-top: 4px;
+}
+.autoBack label{
+	width: 125px;
+	display:inline-block;
+}
+.autoBack select{
+	width: 90px;
+	font-size:14px;
+}
+
+.patrol{
+	margin-top: 4px;
+}
+
+.patrol label{
+	width: 100px;
+	display:inline-block;
+}
+
+.patrol select{
+	width: 85px;
+	font-size:14px;
+}
+
+.genrlPrl{
+	width:550px;
+}
+.genrlPrl select{
+	width: 90px;
+	margin-left:2px;
+}
+.genrlPrl td{
+	text-align:center;	
+}
+
+.genrlPrl1{
+	width:610px;
+}
+
+.genrlPrl1 td{
+	margin-left:2px;
+}
+.genrlPrl2{
+	width:610px;
+}
+/*****PTZ******************/
+.ptzDiv{
+	width:200px;
+}
+
+#pie{
+	height:127px;
+	width:127px;
+}
+.ptzRow{
+ 	width:126px;
+	margin-top:5px;
+}
+
+.ptzText{
+	float:left;
+	width:65px;
+	text-align:left;
+}
+.ptzRow select{
+	width:52px;
+	font-size:14px;
+}
+
+.picRow{
+	width:126px;
+	height:38px;
+}
+
+.picRowLeft{
+	float:left;
+	height:34px;
+	width:34px;
+}
+
+.picRowRight{
+	float:right;
+	height:34px;
+	width:34px;
+}
+
+.picRowTest{
+	margin-top:12px;
+	float:left;
+	width:54px;
+}
+.ptzSelectLab{
+	margin-top:2px;
+	float:left;
+	width:65px;
+	text-align:left;
+}
+
+.ptzSelectLaben{
+	margin-top:2px;
+	font-size:12px;
+	float:left;
+	width:70px;
+	text-align:left;
+}
+
+.LaserPara{
+	margin-top: 4px;
+}
+
+.LaserPara select{
+	width:125px;
+	font-size:14px;
+}
+
+.LaserPara label{
+	width: 125px;
+	display:inline-block;
+}
+/*******************************/
+/*********next for timedFunc********/
+.modeTable{
+	width:500px;
+}
+
+.modeTable tr td{
+	padding:0;
+	margin:0;
+	height:25px;
+	text-align:center;
+}
+.mode_select{
+		width:120px;
+}
+
+.timed{
+	width:780px;
+	margin-left: 50px;	
+	margin-top: 10px;
+}
+
+.timedSet{
+	background-color:#CFDFEF;
+	width: 99%;
+	min-width: 750px;
+	height: 25px;
+	padding: 0;
+	border: 0;
+	margin-top: 0px;
+	margin-left: 1px;
+	overflow: hidden;
+}
+
+.timedSet label{
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 30px;
+	width: 200px;
+	margin-top: 3px;
+	margin-left: 15px;
+}
+.IRwinFrame{
+	width:480px;
+	height:250px;
+	border: 1px solid #F9F6F6;
+}
+
+.afText{
+	font-size:14px;
+	margin-top:10px;
+	margin-left:20px;	
+}
+
+.afButton {
+	background-color:#CFDFEF;
+	FONT-SIZE:14px; 
+	FONT-STYLE: normal; 
+	FONT-VARIANT: normal; 
+	FONT-WEIGHT: normal; 
+	HEIGHT: 30px; 
+	WIDTH:100px;
+	LINE-HEIGHT: normal;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	border:0;
+	margin-top:10px;
+	margin-left:20px;
+}
+

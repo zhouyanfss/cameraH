@@ -1,0 +1,321 @@
+/* CSS Document */
+html{
+	overflow-x:hidden;
+	overflow-y:scroll;
+	scrollbar-base-color : #CFDFEF;
+	background-color:#CFDFEF;
+	}
+	
+body{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;	/*font-weight: bold;*/
+	margin-right: 0px;
+	margin-left:0px;
+	_margin-right:-3px;
+	margin-top:2px;
+	background-color:#CFDFEF;
+	width:200px;
+	padding:0;
+	}
+
+
+img{
+	border:none;
+}
+
+form{
+	margin:0;
+}
+/*********************cn********************************/
+.listdiv { 
+	display: block;
+	width: 260px; 
+	height:42px; 
+	background: url(../images/bar_0.gif) no-repeat; 
+	cursor:pointer; 
+	overflow:hidden;
+	}
+
+	
+.listdiv div {
+	margin-top:12px;
+	font-weight: bold;
+	letter-spacing:4px;
+	font-size:16px;
+	margin-left:40px
+	 	 
+}
+
+.listdiv div label{
+	float:left;
+	width:170px;
+}
+
+/*********************en********************************/
+.listdiven { 
+	display: block;
+	width: 260px; 
+	height:42px; 
+	background: url(../images/bar_0.gif) no-repeat; 
+	cursor:pointer; 
+	overflow:hidden;
+	}
+
+	
+.listdiven div {
+	margin-top:12px;
+	font-weight: bold;
+	letter-spacing:0px;
+	font-size:16px;
+	margin-left:25px;
+	 	
+}
+
+.listdiven div label{
+	float:left;
+	width:185px;
+}
+/*******************************************************/
+.timeOn{
+	/*text-align:left; */
+	background-color:#CFDFEF;
+	border:0;
+	width:100px;
+}
+
+.childdiv{
+	width:250px;  
+	margin-bottom:10px; 
+	margin-left:15px;
+	margin-top:5px;
+}
+.rowDiv{
+	height:30px;
+}
+.rowDivY{
+	height:30px;
+}
+.testDiv{
+	float:left;
+	width:80px;
+	margin-top:8px;
+}
+.testDivBSD{
+	float:left;
+	width:50px;
+	margin-top:8px;
+
+}
+.buttonDiv{	
+	float:right;
+	width:70px;
+}
+.buttonDivBSD{	
+	float:right;
+	width:45px;
+	/*background-color:#CFDFEF;*/
+}
+.buttonDivBSD input{	
+	background-color:#CFDFEF;
+}
+
+.domSelect{
+	width:60px;
+	margin-top:3px;
+}
+.domSelectBSD{
+	width:50px;
+	margin-top:3px;
+}
+
+.videoSet_select{ 
+	width:110px; 
+}
+
+.videoSizeTest{
+	display:block;
+	float:left;
+	width:85px;
+	margin-top:4px;
+	
+}
+
+.videoSizeTest_cn{
+	display:block;
+	float:left;
+	width:80px;
+	margin-top:4px;
+	height:50px;
+}
+.videoSizeTest_cn1{
+	display:block;
+	float:left;
+	width:80px;
+	margin-top:4px;
+	left:0px;
+}
+.autoScan{
+	margin-top:10px;
+	margin-bottom:15px;	
+	
+}
+
+.imgMask{
+		background-color:#fff5ee;
+		/*filter:alpha(opacity=30);*/
+		/*filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30,style=0);
+		opacity:0.3;*/
+		height:47px;
+		width:47px;
+		position:absolute;
+		left:0px;
+		top:0px;
+		z-index:-2;
+}
+.M_P_mask{
+		background-color:#fff5ee;
+		height:47px;
+		width:47px;
+		position:absolute;
+		left:0px;
+		top:0px;
+		z-index:5;
+		visibility:hidden;
+}
+
+.picDiv{
+	margin-top:10px;
+	height:47px;
+}
+
+.unitDiv{
+	float:left;
+	width:47px;
+	height:47px;
+	margin-left:3px;
+}
+
+
+.ButtonSet{
+	background-image:url(../images/ptz_call.gif);
+	padding: 0;
+	border: 0;
+	height: 30px;
+	width: 62px;
+	font-size:14px;
+}
+
+.ButtonSize{
+	background-image:url(../images/AreaDrag.gif);
+	padding: 0;
+	border: 0;
+	height: 24px;
+	width: 45px;
+	font-size:14px;
+}
+.scan{
+	background-image:url(../images/scan.gif);
+	padding: 0;
+	border: 0;
+	height: 31px;
+	width: 77px;
+	font-size:14px;	
+}
+/*********************rootLeftSet css**********************************************************/
+
+.leftul{
+	margin:0px; 
+	padding:0px; 
+	width:260px;
+	
+}
+.leftul li {  
+	height: 42px;   
+	line-height:42px; 
+	font-weight:bold; 
+	color:#000000; 
+	list-style-type:none; 
+	background-image:url(../images/bar_0.gif); 
+	background-repeat:no-repeat; 
+	letter-spacing:4px; 
+	padding-left:60px; 
+	padding-top:0px; 
+	cursor:pointer;
+}
+
+
+/*********************ptz css**********************************************************/
+.ptzDiv{
+	width:230px;
+}
+
+#pie{
+	height:156px;
+	width:156px;
+}
+#menu{
+	height:156px;
+	width:156px;
+}
+.ptzRow{
+ 	width:156px;
+	margin-top:5px;
+}
+.ptzRow_en{
+ 	width:156px;
+	margin-top:5px;
+}
+.ptzRow_en select{
+	width:65px;
+}
+.ptzText{
+	float:left;
+	width:70px;
+	margin-top:3px;
+}
+.ptzText_en{
+	float:left;
+	width:85px;
+	margin-top:3px;
+	text-align:left;
+	text-indent:2px;
+}
+
+.ptzRow select{
+	width:75px;
+}
+
+.picRow{
+	width:156px;
+	height:45px;
+}
+
+.picRowLeft{
+	float:left;
+	height:42px;
+	width:42px;
+}
+
+.picRowRight{
+	float:right;
+	height:42px;
+	width:42px;
+}
+
+.picRowTest{
+	margin-top:12px;
+	float:left;
+	width:72px;
+}
+
+.divTransparent{
+	width:230px;
+	height:300px;
+	z-index:2;
+	position:absolute;
+	top:0;
+	left:0;
+	background-image:url(../images/transparent.gif);
+	background-repeat:repeat;
+	visibility:hidden;
+}

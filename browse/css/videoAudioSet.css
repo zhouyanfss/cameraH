@@ -1,0 +1,418 @@
+.videoWindow{
+	width: 1000px;
+	height: 300px;
+	background-color: #F9F6F6;
+	padding-top:45px;
+	padding-left: 110px;
+}
+.videoSet{
+	height: 224px;
+	width: 780px;
+	margin-left: 85px;
+	display: block;
+}
+.videoClass{
+	width: 100%;
+	height: 250px;
+	background-color: #F9F6F6;
+	padding-top: 345px;
+	display: none;
+}
+.videoSetShow{
+	height: 200px;
+	width: 190px;
+	float: left;
+	padding-left:10px;
+}
+.videoSetMode{
+	width: 100px;
+	margin-left: 70px;
+}
+.videoSetMode input{
+	float: left;
+}
+.videoSetMode label{
+	float: left;
+}
+.videoSetList{
+	width: 190px;
+	height: 22px;
+	margin-bottom: 2px;
+}
+.videoSetList label{
+	width: 70px;
+	float: left;
+	text-align: left;
+	font-size: 14px;
+	line-height: 22px;
+}
+.videoSetList select{
+	width: 100px;
+	height: 21px;
+	line-height: 21px;
+	padding:0;
+	float: left;
+}
+.cssVideoMode{
+	width: 150px;
+	height: 28px;
+	margin: auto;
+	cursor:default;
+}
+.cssVideoMode input{
+	vertical-align:middle;
+	margin-left:7px;
+}
+.cssVideoMode label{
+	font-size: 14px;
+	font-weight:bold;
+	vertical-align:middle;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+.submitButton{
+	width: 107px;
+	float: right;
+}
+.OSDset{
+	width: 600px;
+	margin-left: 25px;
+	height: 26px;
+	display: block;
+}
+.OSDcontain{
+	width: 90px;
+	display: inline-block;
+	text-align: left;
+	float: left;
+	overflow: hidden;
+	font-size: 14px;
+	vertical-align:middle;
+	line-height:20px;
+	height: 20px;
+	margin-top:1px;
+}
+.OSDstate{
+	width: 500px;
+	height: 23px;
+	display: block;
+	margin-left: 0px;
+	float: left;
+	position: relative;
+}
+.OSDraidoLabel{
+	text-align: left;
+	float: left;
+	display: inline-block;
+	width: 40px;
+	overflow: hidden;
+	font-size:14px;
+	margin-top: 5px;
+	margin-left: 2px;
+}
+.OSDXYlabel{
+	text-align: left;
+	width: 100px;
+	display: inline-block;
+	overflow:hidden;
+	position: absolute;
+	left: 210px;
+	font-size:14px;
+	top:2px;
+}
+.textX{
+	width: 30px;
+	position:absolute;
+	left: 292px;
+	height: 17px;
+	line-height: 17px;
+}
+.textY{
+	width: 30px;
+	position:absolute;
+	left: 330px;
+	height: 17px;
+	line-height: 17px;
+}
+.OSDtext{
+	width: 320px;
+	float: left;
+	margin-left: 0px;
+	height: 17px;
+	line-height: 17px;
+}
+.OSDopen{
+	float: left;
+	margin-top: 2px;
+	margin-left: 2px;
+}
+.motionSet{
+	width: 500px;
+	margin: auto;
+	height: 23px;
+}
+.motionPara{
+	width: 480px;
+}
+.motionPara input{
+	float: left;
+}
+.paraExplain{
+	float: left;
+	font-size: 16px;
+	margin-left: 11px;
+}
+.sliderBox{
+	float: left;
+}
+.sliderBox label{
+	float: left;
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
+	height: 15px;
+}
+.sliderBox div{
+	width: 112px;
+	height: 15px; 
+	background-image:url(../images/slider_back.gif);
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 0;
+}
+.sliderBox img{
+	cursor: pointer;
+	margin-left: 1px;
+}
+.filePath{
+	width: 600px;
+	margin-left: 55px;
+}
+.shotPath{
+	width: 600px;
+	margin-top: 5px;
+	display: inline-block;
+	float: left;
+	padding: 0;
+	border: none;
+}
+.shotPath label{
+	width: 150px;
+	float: left;
+	margin-top: 4px;
+	text-align: right;
+	font-size:14px;
+}
+.shotPath select{
+	width: 60px;
+	float: left;
+	margin-top:2px;
+}
+.shotPathInput{
+	width: 240px;
+	float: left;
+	margin-top:1px;
+	height:17px;
+	line-height:17px;
+}
+.shotPathbto{
+	width: 65px;
+	height: 24px;
+	background-image:url(../images/AreaSet.gif);
+	padding:0;
+	border:0;
+	margin-left: 5px;
+	float: left;
+	display: inline;
+}
+.audioParaClass{
+	width:300px;
+	margin-left: 110px;
+}
+.audioParaClass label{
+	width: 90px;
+	line-height: 25px;
+	text-align: left;
+	display: inline-block;
+	font-size: 14px;
+	margin-top:2px;
+}
+.audioParaClass form select{
+	width:100px;
+}
+.audioParaClass form input{
+	width: 80px;
+	margin-left: 120px;
+}
+.dragBegin{
+	background-image:url(../images/AreaDrag.gif);
+	width: 45px;
+	height:24px;
+	padding:0;
+	border:0;
+	margin-left:3px;
+	margin-top: 2px;
+}
+.sensLabel{
+	float: left;
+	font-size:14px;
+	display: inline;
+	margin-left: 0;
+	margin-top: 4px;
+	margin-right: 5px;
+	width: 26px;
+	display:inline-block;
+	overflow:hidden;
+	padding:0;
+	display:none;
+}
+.sensExplain{
+	font-size:11px;
+	float:left;
+	margin-top:6px;
+}
+.sensDrag{
+	width: 140px;
+	height: 19px;
+	margin-top: 3px;
+	float: left;
+	display: inline;
+}
+.areaSet{
+	width: 570px;
+	margin-left: 73px;
+	display: block;
+}
+.areaSetName{
+	float: left;
+	width: 100px;
+	height: 25px;
+	margin-top: 5px;
+}
+.areaSetName label{
+	float: right;
+	vertical-align:middle;
+	padding:0;
+}
+.areaSetName input{
+	float: right;
+	vertical-align:middle;
+	padding:2px;
+}
+.areaSetContain{
+	border:#999 dotted 1px;
+	padding: 2px;
+	height: 54px;
+	width: 430px;
+	float: left;
+	margin-top: 5px;
+	display: block;
+	overflow: hidden;
+}
+.areaSetTop{
+	float: left;
+	display: block;
+	height: 28px;
+	width: 490px;
+}
+.areaName{
+	float: left;
+	margin-top: 6px;
+	margin-left: 10px;
+	font-size:14px;
+	width: 40px;
+	display: inline-block;
+}
+.areaSetTop input{
+	float: left;
+}
+.areaSetBottom{
+	float: left;
+	display: block;
+	height: 25px;
+	width: 490px;
+	margin-left: 3px;
+	font-size:15px;
+}
+.areaSetBottom input{
+	width: 65px;
+	height: 24px;
+	background-image:url(../images/AreaSet.gif);
+	padding:0;
+	border:0;
+	margin-left: 6px;
+	float: left;
+	display: inline;
+}
+.motionSenstive{
+	float: left;
+	margin-top:5px;
+	font-size:14px;
+	width:70px;
+	overflow:hidden;
+	display: inline-block;
+}
+.slider{
+	width:140px;
+	float: left;
+	margin-left: 1px;
+	margin-right: 1px;
+	margin-top: 3px;
+	/* overflow:hidden;*/
+}
+.sensDiv{
+	width: 268px;
+	display: inline-block;
+	float: left;
+}
+.mdScopeDrag{
+	width: 220px;
+	display: inline-block;
+	float: left;
+	margin-left:25px;
+}
+.mdScopeBut{
+	width:60px;
+	margin-left:370px;
+}
+.areaNinput{
+	float: left;
+	width: 305px;
+	height: 17px;
+	line-height: 17px;
+	margin-top: 7px;
+	margin-left: 10px;
+}
+.areaNameInput{
+	width: 295px;
+	margin-top: 2px;
+}
+.tahoma{
+	font-family:Tahoma, Geneva, sans-serif;
+}
+.lenLabel{
+	color:#FF0000;
+	font-size:22px;
+	font-weight:900;
+	font-family:'Times New Roman', Times, serif;
+	visibility: hidden;
+}
+.lenOSD{
+	font-size:14px;
+	color:#FF0000;
+	margin-top:3px;
+	height:20px;
+	font-family:Tahoma, Geneva, sans-serif;
+	padding:0;
+	margin-left:1px;
+	display:inline-block;
+	visibility:hidden;
+}
+.clear{
+	clear:both;
+}
+.noteLabel{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:13px;
+	padding-left:110px;
+	display:none;
+}

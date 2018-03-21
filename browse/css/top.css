@@ -1,0 +1,182 @@
+/* CSS Document */
+.body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	margin: 0;
+}
+img {
+	border:0 0 0 0;
+}
+.topmenu {
+	position:relative;
+	width:100%; 
+	height:47px; 
+	margin:0 auto;
+	background-color:#CFDFEF;
+	min-width:900px;
+}
+
+.topImg{
+	position:relative;
+	height:70px;
+	min-width:900px;  
+	background:url(../images/top_bg.gif); 
+}
+
+.logoPic{
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:0;
+	background:url(../images/hkvision_IR_camera.gif) no-repeat;
+	height:70px;
+	width:920px;
+}
+.logoPic_e{
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:0;
+	background:url(../images/hkvision_IR_camera_e.gif) no-repeat;
+	height:70px;
+	width:920px;
+}
+
+.topImgLamp{
+	position:absolute;
+	top:10px;
+	right:220px;
+
+}
+
+
+.versionLable {
+	display:block;
+	position:absolute;
+	top:27px;
+	right:22px;
+	font-size:12px;
+	color:#F9F9F9;
+}
+
+.topmenu select{
+	position:absolute;
+	right:20px;
+	top:5px;
+	width:100px; 
+
+}
+
+.topmenu ul {
+	position:absolute;
+	left:0px;
+	top:0px; 
+	list-style: none; 
+	margin: 0px; 
+	padding: 0px;
+	height:47px;
+	width:425px;
+	z-index:3;
+}
+.topmenu ul li { 
+	margin-left:-2px;
+	width: 211px;
+	height: 47px;
+	margin-top: 0px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 47px;
+	list-style: none;
+	float: left;
+	font-weight:bold;
+	font-size: 18px;
+	cursor: pointer;
+	background-image:url(../images/topbutton0.gif);
+	color:#000000;
+	letter-spacing:2px;
+	background-repeat:no-repeat;
+}
+
+
+/**************old code belowe***************************/
+.header{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bolder;
+}
+.table2{
+    border:#5D5C5C solid; 
+	border-width:1px 0 0 1px; 
+	background:#ffffff; 
+}
+.td0{
+    border:#5D5C5C solid;  
+	border-width:0 0 1px 0;
+}
+.td2{
+    border:#5D5C5C solid;   
+	border-width:0 1px 1px 0; 
+}
+.timecolor{
+	color:#000000;
+	font-size:12px;
+	font-weight:bolder;
+}
+/*20130106 add buttons*/
+.selectButton{
+	position:absolute;
+	top:0px;
+	height:47px;
+	right:150px;
+	width:282px;
+}
+.unitDivMov{
+	position:absolute;
+	right:47px;
+	width:47px;
+	margin-top:0px;
+}
+.unitDivPri{
+	position:absolute;
+	right:0px;
+	width:47px;
+	margin-top:0px;
+}
+.unitDivIn{
+	position:absolute;
+	right:47px;
+	width:47px; 
+}
+.unitDivOut{
+	position:absolute;
+	right:0px;
+	width:47px; 
+}
+/*.unitDivRePath{
+	position:absolute;
+	right:94px;
+	width:47px; 
+}*/
+.unitDivRecord{
+	position:absolute;
+	right:94px;
+	width:47px; 
+}
+.unitDivZoom{
+	position:absolute;
+	right:188px;
+	width:47px; 
+}
+/*.unitDivCaPath{
+	position:absolute;
+	right:188px;
+	width:47px; 
+}*/
+.unitDivCamera{
+	position:absolute;
+	right:141px;
+	width:47px; 
+}
+
+
+

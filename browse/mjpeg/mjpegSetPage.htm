@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+var timeoutID=0;
+var lq = 1;
+var key = (new Date()).getTime();
+var DOMimg = new Array();
+var DOMimgHank = new Object();
+function continueGet(num){
+	DOMimgHank.style.visibility = "hidden";
+	var imgNow = DOMimg[num];
+	var imgLast = DOMimg[1-num];
+	imgNow.style.visibility = "visible";
+	imgLast.style.visibility = "hidden";
+	imgLast.src = "../../jpgmulreq/1/image.jpg?key="+key+"&lq="+lq;
+	window.status = " ";
+	lq = 3000==lq? 0: (lq+1);
+}
+
+function getPic(num){
+	setTimeout(function(){
+		clearTimeout(timeoutID);
+		continueGet(num);
+		timeoutID = setTimeout(noVideo,5000);
+	}, 30);
+}
+function error(num){
+	setTimeout(function(){
+		var time = (new Date()).getTime();
+		DOMimg[num].src = "../../jpgmulreq/1/image.jpg?key="+time+"&lq="+lq;
+	}, 500);
+}
+function noVideo(){
+	DOMimgHank.style.visibility = "visible";
+}
+window.onload = function(){
+	DOMimg = [document.getElementById("jsMJPEGset0"),document.getElementById("jsMJPEGset1")];
+	DOMimgHank = document.getElementById("imgHkvision");
+	DOMimg[0].src = "../../jpgmulreq/1/image.jpg?key=12345678901&lq=1";
+	timeoutID = setTimeout(noVideo,5000);
+}
+
+</script>
+</head>
+
+<body oncontextmenu="return false;" style="margin:0; padding: 0; border:none; background-color:transparent; position: relative">
+<img id="imgHkvision" src="../images/hkvision_mjpeg.gif" style="width:480px; height:270px; position:absolute; top:0; left:0; z-index:2" galleryimg="no" />
+<img id="jsMJPEGset0" onload="getPic(0)" onabort="error(0)" onerror="error(0)" style="visibility:hidden;width:480px; height:270px; position:absolute; top:0; left:0; z-index:0" galleryimg="no" />
+<img id="jsMJPEGset1" onload="getPic(1)" onabort="error(1)" onerror="error(1)" style="visibility:hidden; width:480px; height:270px; position:absolute; top:0; left:0; z-index:1" galleryimg="no" />
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Calibration</title>
+<style type="text/css">
+body{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:14px;
+}
+.topLab{
+	position:absolute;
+	top:25px;
+	left:50px;
+	font-size:20px;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+.playerDiv{
+	width:480px;
+	height:270px;
+	border:#777 solid 1px;
+	position: absolute;
+	left: 110px;
+	top:60px;
+}
+.nameLab{
+	position:absolute;
+	top:370px;
+	left:130px;
+}
+.selectType{
+	position:absolute;
+	left:220px;
+	top: 370px;
+}
+.actBto{
+	position:absolute;
+	top: 370px;
+	left:420px;
+	width:100px;
+	height:34px;
+}
+.liLab{
+	position:absolute;
+	top:60px;
+	left:765px;
+	font-size:16px;
+}
+.hankDiv{
+	position:absolute;
+	top:90px;
+	left:650px;
+	background-color:#EEE;
+	width:300px;
+	height:400px;
+}
+.hankSon{
+	margin-top:30px;
+	margin-left:10px;
+	width:280px;
+	height:180px;
+	background-color:#FFF;
+	font-size:12px;
+	display:none;
+}
+.hankSon label{
+	width:270px;
+	margin-left:5px;
+	margin-top:3px;
+	display:block;
+}
+#stateDiv label{
+	visibility:hidden;
+}
+</style>
+<script type="text/javascript">
+var labelStatus = 0;
+var deviceStatus = null;
+var stopFlag = 0;
+window.onload = function(){
+	var ip = window.location.hostname;
+	var player = document.getElementById("Player");
+	var port=parseInt(top.topFrame.document.getElementById('videoPort').value)||90;		
+	player.width = 480;
+	player.height = 270;
+	try{
+	player.RunPlayEx(ip,0,"0.0.0.0",2,port,0,"admin","admin");
+	}catch(e){
+		setTimeout(arguments.callee,500);
+	}
+}
+function setInnerText(ele,text){
+	if(typeof ele.textContent == "string"){
+		ele.textContent = text;
+		setInnerText = function(element,textVal){
+			element.textContent = textVal;
+		}
+	}else{
+		ele.innerText = text;
+		setInnerText = function(element,textVal){
+			element.innerText = textVal;
+		}
+	}
+}
+function displayHank(type){
+	var divArray = ["blackDiv","helpDiv","stateDiv"];
+	for(var i = 0; i < divArray.length; i++){
+		document.getElementById(divArray[i]).style.display = "none";
+	}
+	document.getElementById(divArray[type]).style.display = "block";
+}
+function caliStart(){
+	document.getElementById("jsFlag").value = 1;
+	document.getElementById("startBto").disabled = true;
+	document.getElementById("stopBto").disabled = true;
+	document.getElementById("helpBto").disabled = true;
+	deviceStatus = "set";
+	document.getElementById("setForm").submit();
+	var hankLabel = document.getElementById("stateDiv").getElementsByTagName("label");
+	for(var i = 0; i < hankLabel.length; i++){
+		hankLabel[i].style.visibility = "hidden";
+	}
+	setInnerText(document.getElementById("secLab")," ");
+	displayHank(2);
+	labelStatus = 0;
+	setTimeout(function(){showStatus(hankLabel,true);},1000);
+}
+function caliDelt(){
+	deviceStatus = "del";
+	document.getElementById("jsFlag").value = 0;
+	document.getElementById("setForm").submit();
+	displayHank(0);
+}
+function showStatus(domArray,show){
+	if(null === displayHank){
+		return;
+	}
+	var show = show? true: false;
+	var vis = show? "visible": "hidden";
+	if(labelStatus < 4){
+		domArray[labelStatus].style.visibility = vis;
+		labelStatus++;
+		setTimeout(function(){showStatus(domArray,show)},1400);
+	}
+}
+function getState(text){
+	var state = text.toString().match(/\$STATE\$=\d+/i);
+	state = null==state? false : parseInt(state[0].match(/\d+/),10);
+	return state;
+}
+function rebootWait(sec){
+	var sec = parseInt(sec);
+	if(sec > 0){
+		sec = 10 > sec? "0"+sec: sec;
+		setInnerText(document.getElementById("secLab"),"-------------------- "+sec+" -------------");
+		sec--;
+		setTimeout(function(){rebootWait(sec)},1000);
+	}else{
+		setInnerText(document.getElementById("secLab"),"7. 重启完毕.");
+		document.getElementById("startBto").disabled = false;
+		document.getElementById("stopBto").disabled = false;
+		document.getElementById("helpBto").disabled = false;
+	}
+}
+function resultHander(){
+	if(null === deviceStatus){
+		return;
+	}else if("reboot" == deviceStatus){
+		
+		return;
+	}else if("del" == deviceStatus){
+		return;
+	}
+	try{
+		var elem = document.getElementById("hideFrame");
+		elem = elem.contentDocument || elem.contentWindow.document;
+		elem = (typeof elem.documentElement.textContent=="string")?elem.documentElement.textContent: elem.documentElement.innerText;
+	}catch(e){
+		return;
+	}
+	var state = getState(elem);
+	var hankLabel = document.getElementById("stateDiv").getElementsByTagName("label");
+	if(deviceStatus == "set"){
+		if(state == 1){
+			for(var i = 0; i < 5; i++){
+				hankLabel[i].style.visibility = "visible";
+			}
+			deviceStatus = null;
+			if(confirm("重启设备后, 坏点校正效果方能生效.\n现在重启?")){
+				deviceStatus = "reboot";
+				document.getElementById("hideFrame").src = "/form/reboot?_="+(new Date()).getTime();
+				hankLabel[5].style.visibility = "visible";
+				hankLabel[6].style.visibility = "visible";
+				rebootWait(60);
+				return;
+			}
+		}else{
+			displayHank(0);
+			alert("程序出错, 请检查设备状态!");
+		}
+		document.getElementById("startBto").disabled = false;
+		document.getElementById("stopBto").disabled = false;
+		document.getElementById("helpBto").disabled = false;
+	}
+/*	else if(deviceStatus == "del"){
+		if(state == 2){
+			setTimeout(function(){document.getElementById("getForm").submit();},1000);
+		}else if(state== 1){
+			for(var i = 0; i < hankLabel.length; i++){
+				hankLabel[i].style.visibility = "visible";
+			}
+			document.getElementById("startBto").disabled = false;
+			document.getElementById("stopBto").disabled = true;
+			document.getElementById("helpBto").disabled = false;
+		}else{
+			alert("程序出错, 请检查设备状态!");
+		}
+	}else{
+		for(var i = 0; i < hankLabel.length; i++){
+			hankLabel[i].style.visibility = "hidden";
+		}
+		document.getElementById("stateDiv").style.display = "none";
+		document.getElementById("blackDiv").style.display = "block";
+		document.getElementById("startBto").disabled = false;
+		document.getElementById("stopBto").disabled = true;
+		document.getElementById("helpBto").disabled = false;
+	}
+	
+*/}
+
+</script>
+</head>
+
+<body>
+<iframe onload="resultHander()" name="hideFrame" id="hideFrame" style="display:none"></iframe>
+<label class="topLab">Calibration</label>
+<div class="playerDiv">
+	<script language="javascript" src="../javascript/browseEm.js"></script>
+</div>
+<form id="getForm" target="hideFrame" method="post" action="/form/calibrateGet">
+</form>
+<form id="setForm" target="hideFrame" method="get" action="/form/calibrateSet">
+	<input type="hidden" id="jsFlag" name="flag" value="1" />
+    <label class="nameLab">预调节校正:</label>
+    <select class="selectType" name="calibrateType">
+        <option value="0">静态坏点校正</option>
+    </select>
+</form>
+<input id="startBto" class="actBto" type="button" value="开始校正" onclick="caliStart()" />
+<input id="stopBto" class="actBto" type="button" value="清空数据" onclick="caliDelt()" style="top:430px;" />
+<input id="helpBto" class="actBto" type="button" value="帮助信息" onclick="displayHank(1)" style="top:490px"/>
+
+<label class="liLab">信息栏</label>
+<div class="hankDiv">
+	<div id="blackDiv" class="hankSon" style="display:block">&nbsp;</div>
+    <div class="hankSon" id="helpDiv">
+        <div style="height:8px;">&nbsp;</div>
+        <label>静态坏点校正可以将摄像机的静态坏点补偿, 请点击开始校正按钮并按提示操作, 操作前请先阅读注意事项.</label>
+        <br />
+        <label>注意事项:</label>
+        <label>1. 开始校正前需要保持黑场状态;</label>
+        <label>2. 完成校正并保存数据后，校正即完成;</label>
+        <label>3. 重启设备后, 坏点校正效果方能生效.</label>
+    </div>
+    <div class="hankSon" id="stateDiv">
+    	<div style="height:8px;">&nbsp;</div>
+        <label>1. 坏点检测中......</label>
+        <label>2. 坏点检测完成, 坏点位置信息保存在临时文件夹;</label>
+        <label>3. 校验坏点, 显示检测坏点;</label>
+        <label>4. 检测坏点补偿, 坏点消失;</label>
+        <label>5. 保存校正数据, 校正完成.</label>
+        <label>6. 设备正在重启, 请稍候...</label>
+        <label id="secLab"></label>
+    </div>
+</div>
+</body>
+</html>

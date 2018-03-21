@@ -1,0 +1,34 @@
+/* CSS Document */
+/*条的边框和颜色*/
+.form_widget_amount_slider{
+		border-top:1px solid #9d9c99;
+		border-left:1px solid #eee;
+		border-right:1px solid #eee;
+		/*background-color:#f0ede0;*/
+		background-color:#DCDCDC;
+		height:3px;
+		position:absolute;
+		overflow:hidden;
+		bottom:0px;
+}
+
+.form_cover_slider_layer{
+		border-bottom:1px solid #eee;
+		border-right:1px solid #eee;
+		background-color:#fff5ee;
+		/*filter:alpha(opacity=50);*/
+		height:20px;
+		position:absolute;
+		bottom:-5px;
+		left:0px;
+	}
+
+/*左侧有值部分变颜色 red  */
+.form_widget_amount_slider_red{
+		
+		/*background-color:#A52A2A;*/
+		background-color:#696969;
+		height:3px;
+		position:absolute;
+		bottom:1px;
+}

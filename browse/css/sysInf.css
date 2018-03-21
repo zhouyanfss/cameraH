@@ -1,0 +1,365 @@
+
+html{
+	overflow:scroll;
+	background-color:#F9F6F6;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	font-size:16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.topMenu{
+	width: 99%;
+	height: 30px;
+	border-bottom: #BBB 1px solid;
+	margin-bottom: 1px;
+	margin-left: 1px;
+}
+
+.topMenu ul{
+	height: 29px;
+	margin: 0px;
+	margin-bottom: 0px;
+	padding: 0;
+}
+
+.choose{
+	width: 90px;
+	height: 28px;
+	overflow:hidden;
+	margin: 0;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 32px;
+	list-style: none;
+	float: left;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+	border-right:1px #F9F6F6 solid;
+	border-bottom:1px #F9F6F6 solid;
+	border-top:1px #F9F6F6 solid;
+	background-color:#F2F2F2;
+	padding: 0;
+}
+
+/*一级菜单设置*/
+.hankClass{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: none;
+}
+
+.hankName{
+	background-color:#CFDFEF;
+	width: 99%;
+	min-width: 830px;
+	height: 25px;
+	padding: 0;
+	border: 0;
+	margin-top: 0px;
+	margin-left: 1px;
+	overflow: hidden;
+}
+
+
+.hankName label{
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 30px;
+	width: 200px;
+	margin-top: 3px;
+	margin-left: 15px;
+}
+
+.content{
+	padding: 0;
+	border: 0;
+	width: 800px;
+	margin-top: 4px;
+	margin-bottom: 2px;
+	margin-left: 40px;
+	overflow: hidden;
+}
+
+.content label{
+	float: left;
+	font-size:14px;
+}
+
+.contTop{
+	margin-top: 7px;
+}
+.contBot{
+	margin-bottom: 8px;
+}
+.contButton{
+	margin-top: 15px;
+}
+
+.explain{
+	width: 120px;
+	margin-top: 5px;
+	vertical-align: middle;
+	text-align: left;
+}
+.explainLeft{
+	width: 120px;
+	margin-top: 4px;
+	vertical-align: middle;
+	text-align: left;
+	margin-left: 40px;
+}
+
+.explainLeftEN{
+	width: 140px;
+	margin-top: 3px;
+	vertical-align: middle;
+	text-align: left;
+	margin-left: 40px;
+}
+
+.sonexplain{
+	width: 100px;
+	margin-left: 0px;
+	margin-top: 5px;
+	vertical-align: middle;
+	text-align: left;
+}
+
+.hank{
+	width: 250px;
+	text-indent: 10px;
+	margin-top: 4px;
+}
+.hankWord{
+	width: 200px;
+	text-indent: 10px;
+	margin-top: 5px;
+}
+
+.h264para{
+	font-weight:500;
+	font-size:15px;
+	margin-left: 65px;
+}
+
+.sonHank{
+	border: 1px;
+	border-color:#888;
+	border-style:dotted;
+	width: 620px;
+	margin-left: 80px;
+	padding:0;
+	overflow: hidden;
+}
+
+.closepic{
+	cursor: pointer;
+}
+
+/***********************************/
+.setExplain{
+	width: 120px;
+	margin-top: 4px;
+	margin-left: 40px;
+	float: left;
+	text-align:left;
+	overflow:hidden;
+}
+.setExplainEN{
+	width: 175px;
+	margin-top: 1px;
+	margin-left: 40px;
+	float: left;
+	text-align:left;
+	overflow:hidden;
+	height: 20px;
+}
+
+.showselect{
+	width: 150px;
+	height: 15px;
+	line-height: 15px;
+	float: left;
+	font-size:14px;
+	overflow:hidden;
+}
+.selectLab{
+	width: 156px;
+	height: 22px;
+	line-height:22px;
+	float: left;
+	font-size: 14px;
+	margin-top: 1px;
+}
+
+.textShow{
+	width: 200px;
+	margin-top: 0px;
+	text-indent: 10px;
+}
+
+.radioSelect{
+	float: left;
+	width: 90px;
+	margin-top: 0px;
+	margin-left: 0px;
+	vertical-align: middle;
+	height: 22px;
+}
+
+.radioSelect input{
+	float: left;
+	margin-left:0px;
+	margin-top: 1px;
+}
+
+.radioSelect label{
+	float: left;
+	margin-left: 3px;
+	line-height: 20px;
+	margin-top: 2px;
+}
+.radioSelectEN{
+	float: left;
+	width: 90px;
+	margin-top: 0px;
+	margin-left: 0px;
+	vertical-align: middle;
+	height: 22px;
+}
+
+.radioSelectEN input{
+	float: left;
+	margin-left:0px;
+	margin-top: 1px;
+}
+
+.radioSelectEN label{
+	float: left;
+	margin-left: 3px;
+	line-height: 20px;
+	margin-top: 1px;
+}
+
+.ButtonLeft{
+	background-color:#CFDFEF;
+	background-repeat: no-repeat;
+	font-size:14px;
+	padding: 0;
+	border: 0;	
+	height: 30px;
+	width: 81px; 
+	float: left;
+	margin-left:228px;
+	margin-bottom: 5px;
+}
+
+.ButtonRight{
+	background-color:#CFDFEF;
+	background-repeat: no-repeat;
+	font-size: 14px;
+	padding: 0;
+	border:0;	
+	height: 30px;
+	width: 81px;
+	margin-left: 7px;
+	float: left;
+}
+
+.fileSelect{
+	float: left;
+	margin-left: 40px;
+	margin-top: 1px;
+	width: 300px;
+	padding: 0;
+}
+
+.eleHide{
+	visibility: hidden;
+}
+
+.uploadFile{
+	background-image:url(../images/AreaDrag.gif);
+	width: 45px;
+	height:24px;
+	padding:0;
+	border:0;
+	margin-left:13px;
+}
+
+.clearSpace{
+	margin:0;
+	padding:0;
+	border:none;
+}
+
+.fileUpCon{
+	width: 300px;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 3px;
+	float: left;
+	font-size:14px;
+}
+.fileUpLab{
+	width: 120px;
+	margin-top: 5px;
+	margin-left: 40px;
+	float: left;
+	text-align:left;
+	overflow:hidden;
+}
+
+.ButtonOnly{
+	background-color:#CFDFEF;
+	background-repeat: no-repeat;
+	font-size:14px;
+	padding: 0;
+	border: 0;	
+	height: 30px;
+	width: 81px; 
+	float: left;
+	margin-left:360px;
+	margin-bottom: 5px;
+}
+
+.CAupload{
+	float:left;
+	padding-left:0;
+	margin-left:80px;
+	width: 300px;
+	height:20px;
+	line-height:20px;
+}
+
+.synTime{
+	width: 20px;
+	height: 15px;
+	line-height: 15px;
+	font-size:14px;
+	float: left;
+	text-align:center;
+}
+.sipInput{
+	width: 170px;
+	height: 15px;
+	line-height: 15px;
+	float: left;
+	font-size:14px;
+	overflow:hidden;
+}
+
+.qrSection{
+	float:left;
+	width: 240px;
+	padding-left:10px;
+	text-align:center;
+	margin-top:10px;
+}

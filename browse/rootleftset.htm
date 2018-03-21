@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/videoSet.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="javascript/jquery.js"></script>
+<script type="text/javascript" src="javascript/cookie.js"></script>
+<script type="text/javascript" src="javascript/leftsetting.js"></script>
+<script type="text/JavaScript" language="JavaScript" >
+MM_preloadImages('images/bar_0.gif','images/bar_1.gif'); 
+</script>
+<title>设置</title>
+<style type="text/css">
+body{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;	/*font-weight: bold;*/
+	margin:0;
+	background-color:#CFDFEF;
+}
+
+.leftul li{
+	letter-spacing:0px;
+}
+
+html{
+	overflow-y:hidden;
+}
+</style>
+
+
+</head>
+<body  class="body" onload="LeftSetOnload();" scroll="no">
+
+	<ul class="leftul">
+		<li id="li1" onClick="onChange(1);loadRef('sysInf.asp');">System</li>
+		<li id="li2" onClick="onChange(2);loadRef('network.asp');">Network</li>
+		<li id="li3" onClick="onChange(3);loadRef('cameraSet.asp');">Camera</li>
+		<li id="li4" onClick="onChange(4);loadRef('videoAudioSet.asp');">Video&Audio</li>
+        <li id="li5" onClick="onChange(5);loadPtzPageE();">PTZ Function</li>
+		<li id="li6" onClick="onChange(6);loadRef('Intelligent.asp');" style="display:block;">Intelligent</li>
+		<li id="li7" onClick="onChange(7);loadRef('alarm.asp');">Alarm</li>
+        <li id="li8" onClick="onChange(8);loadRef('reControl.asp');" style="display:block">Record</li>
+        <li id="li9" onClick="onChange(9);account();">Manage Users</li>
+		<li id="li10" onClick="onChange(10);loadRef('systemlog.asp');">Log</li>
+	</ul>
+
+</body>
+</html>
