@@ -21,16 +21,19 @@
 <input type="hidden" id="deviceIDGet" value='<%DeviceIDGet("deviceid","net");%>' />
 <input type="hidden" id="videoPort" value="<%NetPortGet("VideoPort","net");%>">
 <input type="hidden" id="rtspPort" value="<%NetPortGet("RtspPort","net");%>">
+<!--
 <div class="topImg">
 	<div class="logoPic"></div>
 	<label class="versionLable" style="display:none;"><%VersionGet("version","net");%></label>
-<!--	<div class="topImgLamp"><img id="img1" src="../images/off.gif"/><img id="img2" src="../images/on.gif" style="display:none;"></div> -->
 </div>
-
+-->
 <div class="topmenu">
+	<div class="logoPic">
+	</div>
 	<ul>
-		<li id="li0" onclick="realScan('videoset.asp');" style="background-image:url(../images/topbutton1.gif); letter-spacing:0px;">Browse</li>
+		<li id="li0" onclick="realScan('videoset.asp');" class="selected"  style="letter-spacing:0px; font-family:Arial, Helvetica, sans-serif">Browse</li>
 		<li id="li1" onclick="set('rootleftset.htm','sysInf.asp');" style="letter-spacing:0px; font-family:Arial, Helvetica, sans-serif">Setting</li>
+		<li id="li2" onclick="replay('playback.asp');" style="letter-spacing:0px; font-family:Arial, Helvetica, sans-serif">Playback</li>
 	</ul>
     <select name="lanSelect" id="lanSelect" onchange="lanChange();">
 		<option value="0" selected="selected">English</option>
@@ -48,22 +51,23 @@
 	<input type="hidden" name="imageType" id="imageType" value='<%IVPathGet("imageType","net");%>' />
 	<input type="hidden" name="videoType" id="videoType" value='<%IVPathGet("videoType","net");%>'/>
     <input type="hidden" name="audioType" id="audioType" value='<%audioparaGet("AudioFormat","net");%>' />
-<div class="selectButton" id="butSelect">
+<!--
+	<div class="selectButton" id="butSelect">
 	<div class="unitDivIn">
 			<img id="in_on" onclick="AIn(0);"  style="display:none" src="../images/audio_in.gif"  title="Audio in off">
-            <img id="in_off"  onclick="AIn(1);"   src="../images/audio_in_off.gif"   title="Audio in on"><!--alt="Audio in on"-->
+            <img id="in_off"  onclick="AIn(1);"   src="../images/audio_in_off.gif"   title="Audio in on">
 			<div class="imgMask"></div>	
 	</div>
 	<div class="unitDivOut">
 			<img id="out_on" onclick="AOut(0);"  style="display:none" src="../images/audio_out.gif"  title="Audio out off">
-            <img id="out_off"   onclick="AOut(1);" src="../images/audio_out_off.gif" title="Audio out on"><!--alt="Audio out on"-->
+            <img id="out_off"   onclick="AOut(1);" src="../images/audio_out_off.gif" title="Audio out on">
 			<div class="imgMask"></div>
 	</div>
 	<div class="unitDivRePath" style="display:none;">
 			<img id="recordOpen" onclick="openVideoDir();" src="../images/path.gif" title="Open path">
 			<div class="imgMask"></div>
 	</div>
-	<!--<div class="unitDivOut">--><div class="unitDivRecord">
+	<div class="unitDivRecord">
 		<div id="startR"> 
 			<img name="startP" id="startP" onclick="startRecord();" src="../images/record.gif" title="Start record" >
 			<div class="imgMask"></div>			
@@ -77,7 +81,7 @@
     		<img id="snapOpen" onclick="openImgDir();" src="../images/path.gif" title="Open path">
 			<div class="imgMask"></div>	
 	</div>
-	<!--<div class="unitDivIn">--><div class="unitDivCamera">
+	<div class="unitDivCamera">
 		<div id="h264Snap"> 
 			<img name="SnapShotSet" onclick="setSnapShot();" id="SnapShotSet" src="../images/snap.gif" title="Snap" onmousedown="old=this.src;this.src='../images/snap_on.gif';"onmouseup="this.src=old;">
 		</div>
@@ -110,6 +114,8 @@
 		<div class="imgMask"></div>	
 	</div>
 </div>
+-->
 </div>
+<div style="height:5px; background-color:#aaaaaa; display:block;width:100%;position:relative; min-width:900px;"></div>
 </body>
 </html>

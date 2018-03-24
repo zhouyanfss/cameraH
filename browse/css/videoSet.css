@@ -1,9 +1,10 @@
 /* CSS Document */
 html{
 	overflow-x:hidden;
-	overflow-y:scroll;
-	scrollbar-base-color : #CFDFEF;
-	background-color:#CFDFEF;
+	/*overflow-y:scroll;*/
+	/* scrollbar-base-color : #CFDFEF; */
+	/* background-color:#aaaaaa; */
+	/* background-color:#f9f6f6; */
 	}
 	
 body{
@@ -12,9 +13,9 @@ body{
 	margin-right: 0px;
 	margin-left:0px;
 	_margin-right:-3px;
-	margin-top:2px;
-	background-color:#CFDFEF;
-	width:200px;
+	margin-top:0px;
+	background-color:#c9c6c6;
+	/* width:200px; */
 	padding:0;
 	}
 
@@ -29,35 +30,28 @@ form{
 /*********************cn********************************/
 .listdiv { 
 	display: block;
-	width: 260px; 
+	/*width: 260px; */
 	height:42px; 
-	background: url(../images/bar_0.gif) no-repeat; 
-	cursor:pointer; 
+	line-height:42px;
+	text-align:center;
+	/* background: url(../images/bar_0.gif) no-repeat;  */
+	background-color:#b9b6b6;
 	overflow:hidden;
-	}
-
-	
-.listdiv div {
-	margin-top:12px;
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
 	font-weight: bold;
 	letter-spacing:4px;
 	font-size:16px;
-	margin-left:40px
-	 	 
-}
-
-.listdiv div label{
-	float:left;
-	width:170px;
-}
+	}
 
 /*********************en********************************/
 .listdiven { 
 	display: block;
 	width: 260px; 
 	height:42px; 
-	background: url(../images/bar_0.gif) no-repeat; 
-	cursor:pointer; 
+	background-color:#d9d6d6;
+	border-top:1px solid #a9a6a6;
+	border-bottom:1px solid #a9a6a6;
 	overflow:hidden;
 	}
 
@@ -102,8 +96,9 @@ form{
 }
 .testDivBSD{
 	float:left;
-	width:50px;
+	width:100%;
 	margin-top:8px;
+	display:inline-block;
 
 }
 .buttonDiv{	
@@ -112,11 +107,12 @@ form{
 }
 .buttonDivBSD{	
 	float:right;
-	width:45px;
+	margin-right:12px;
 	/*background-color:#CFDFEF;*/
 }
 .buttonDivBSD input{	
-	background-color:#CFDFEF;
+	background-color:#b9b6b6;
+	width:44px;
 }
 
 .domSelect{
@@ -125,7 +121,6 @@ form{
 }
 .domSelectBSD{
 	width:50px;
-	margin-top:3px;
 }
 
 .videoSet_select{ 
@@ -165,8 +160,8 @@ form{
 		/*filter:alpha(opacity=30);*/
 		/*filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30,style=0);
 		opacity:0.3;*/
-		height:47px;
-		width:47px;
+		height:35px;
+		width:35px;
 		position:absolute;
 		left:0px;
 		top:0px;
@@ -174,8 +169,8 @@ form{
 }
 .M_P_mask{
 		background-color:#fff5ee;
-		height:47px;
-		width:47px;
+		height:35px;
+		width:35px;
 		position:absolute;
 		left:0px;
 		top:0px;
@@ -185,14 +180,14 @@ form{
 
 .picDiv{
 	margin-top:10px;
-	height:47px;
+	height:35px;
 }
 
 .unitDiv{
 	float:left;
-	width:47px;
-	height:47px;
-	margin-left:3px;
+	width:35px;
+	height:35px;
+	/* margin-left:3px; */
 }
 
 
@@ -221,6 +216,7 @@ form{
 	width: 77px;
 	font-size:14px;	
 }
+
 /*********************rootLeftSet css**********************************************************/
 
 .leftul{
@@ -235,12 +231,18 @@ form{
 	font-weight:bold; 
 	color:#000000; 
 	list-style-type:none; 
-	background-image:url(../images/bar_0.gif); 
-	background-repeat:no-repeat; 
+	/*background-image:url(../images/bar_0.gif); */
+	background-color:#ccc;
 	letter-spacing:4px; 
 	padding-left:60px; 
 	padding-top:0px; 
 	cursor:pointer;
+	border:1px solid #999;
+}
+
+.leftul li.selected{
+	background-color:#505050;
+	color:white;
 }
 
 
@@ -258,7 +260,7 @@ form{
 	width:156px;
 }
 .ptzRow{
- 	width:156px;
+ 	width:170px;
 	margin-top:5px;
 }
 .ptzRow_en{
@@ -282,7 +284,7 @@ form{
 }
 
 .ptzRow select{
-	width:75px;
+	width:85px;
 }
 
 .picRow{

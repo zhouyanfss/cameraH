@@ -3,6 +3,29 @@ var timer, imageSrc, count;
 var key, isStopped, host;
 var pro="http:";
 var isFirefox=navigator.userAgent.indexOf("Firefox")
+var lang = 	navigator.language||navigator.systemLanguage;
+
+var constBottomHeight = 32;
+
+function initLan()
+{
+	if(lang.toLowerCase()!="zh-cn")
+	{
+		$(".selectButton img").each(function(){
+			if($(this).attr("_title"))
+			{
+				$(this).attr("title",$(this).attr("_title"))
+			}
+		});
+		
+		$(".btnArea select option").each(function(){
+			if($(this).attr("_enlan"))
+			{
+				$(this).text($(this).attr("_enlan"))
+			}
+		});
+	}
+}
 
 function init(hostv, imageId1, imageId2)
 {
@@ -173,7 +196,7 @@ function initMjpegVideosize()
 	
 	image1 = document.getElementById('myImg1');
 	image2 = document.getElementById('myImg2');
-	var tmpRes = top.leftFrame.document.getElementById('resMjpeg').value;
+	var tmpRes = top.rightFrame.document.getElementById('resMjpeg').value;
 	var W, H;
 	switch(tmpRes)
 	{
@@ -205,8 +228,9 @@ function initMjpegVideosize()
 	{
 			if(parent.document.body.clientHeight > 0)
 			{
-				image1.width = Math.round((parent.document.body.clientHeight)*W/H); image1.height = parent.document.body.clientHeight;
-				image2.width = Math.round((parent.document.body.clientHeight)*W/H); image2.height = parent.document.body.clientHeight;
+				image1.width = Math.round((parent.document.body.clientHeight)*W/H); image1.height = parent.document.body.clientHeight -constBottomHeight;
+				image2.width = Math.round((parent.document.body.clientHeight)*W/H); image2.height = parent.document.body.clientHeight -constBottomHeight;
+
 			}
 			else
 			{
@@ -232,4 +256,6 @@ function initMjpegVideosize()
 		image1.style.left = left;
 	}
 	
+	var bottomDiv=document.getElementById("videoBottom");
+	bottomDiv.style.width = image2.width + "px";
 }

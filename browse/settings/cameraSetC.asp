@@ -32,8 +32,8 @@ window.onbeforeunload = Unload;
 <input type="hidden" id="Hi3518EV200" value='<%videoparaGet("hi3518ev200", "net");%>' />
 <input type="hidden" id="ICEtype" value='<%IntellegentGet("ICEtype","net");%>' />
 
-<div id="topMenu" class="topMenu" style="visibility:hidden; min-width:570px;">
-	<ul style="width:570px;">
+<div id="topMenu" class="topMenu"  style="width:100%;">
+	<ul>
     	<li class="choose" onclick="divShow(0)">基本设置</li>
     	<li class="choose" onclick="divShow(1)">曝光设置</li>
         <li class="choose" onclick="divShow(2)">效果设置</li>

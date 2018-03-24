@@ -1,6 +1,7 @@
 // JavaScript Document
-
 var Language;
+var constBottomHeight=32;
+
 $(document).ready(function(){
 	//addplayercookie("dev",9);
 	$(document).bind("contextmenu",function(){return false;}); 
@@ -31,11 +32,14 @@ $(document).ready(function(){
 	{
 		$("#BitSelect").find("option[value='2']").remove();
 	}
+	
+
 });
 window.onbeforeunload = function(){
 	killTimer();
 	delcookie('player');
 }
+
 
 function InitMode()
 {
@@ -298,7 +302,7 @@ function leftStyle()
 		
 		$("#pNod1_div").css("display","none"); 
 		$("#pNod2_div").css("display","none"); 
-		$("#pNod4_div").css("display","none"); 
+		//$("#pNod4_div").css("display","none"); 
 		
 		$("#motinDiv").show();
 		$("#privacyDiv").show(); 
@@ -339,14 +343,14 @@ function getRes(i)
 function compareh264()
 {
 	var player = parent.mainFrame.videomainFrame.document.getElementById("Player");
-	var WW = parent.mainFrame.videomainFrame.document.documentElement.clientWidth, WH = parent.mainFrame.videomainFrame.document.documentElement.clientHeight;
+	var WW = parent.mainFrame.videomainFrame.document.documentElement.clientWidth, WH = parent.mainFrame.videomainFrame.document.documentElement.clientHeight -constBottomHeight;
 	var ratio = WW/WH;
 	
 	if(ratio >= W/H)
 	{
 		if(WH>0)
 		{
-			player.height = WH -4;
+			player.height = WH;
 			player.width = Math.floor(WH*W/H);
 		}
 		else
@@ -394,17 +398,19 @@ function h264VideoSizeSet()
 			break;
 		case '4':
 			{
-				obj.height = parent.mainFrame.videomainFrame.document.documentElement.clientHeight -4;
+				obj.height = parent.mainFrame.videomainFrame.document.documentElement.clientHeight-constBottomHeight;
 				obj.width = parent.mainFrame.videomainFrame.document.documentElement.clientWidth;
 			}
 
 			break;
 	}
+	
+	parent.mainFrame.videomainFrame.document.getElementById("videoBottom").style.width  = obj.width+"px";
 }
 
 function compareMjpet()//自适应时W H到底取哪个
 {
-	var ratio = (parent.mainFrame.document.body.clientWidth - 8)/parent.mainFrame.document.body.clientHeight;	
+	var ratio = (parent.mainFrame.document.body.clientWidth - 8)/(parent.mainFrame.document.body.clientHeight-constBottomHeight);	
 	var	image1 = parent.mainFrame.videomainFrame.document.getElementById('myImg1');
 	var image2 = parent.mainFrame.videomainFrame.document.getElementById('myImg2');
 	
@@ -412,8 +418,8 @@ function compareMjpet()//自适应时W H到底取哪个
 	{
 			if(parent.mainFrame.document.body.clientHeight > 0)
 			{
-				image1.width = Math.floor((parent.mainFrame.document.body.clientHeight)*W/H); image1.height = parent.mainFrame.document.body.clientHeight;
-				image2.width = Math.floor((parent.mainFrame.document.body.clientHeight)*W/H); image2.height = parent.mainFrame.document.body.clientHeight;
+				image1.width = Math.floor((parent.mainFrame.document.body.clientHeight)*W/H); image1.height = parent.mainFrame.document.body.clientHeight-constBottomHeight;
+				image2.width = Math.floor((parent.mainFrame.document.body.clientHeight)*W/H); image2.height = parent.mainFrame.document.body.clientHeight-constBottomHeight;
 			}
 			else
 			{
@@ -459,10 +465,16 @@ function mjpegVideoSizeSet()
 			compareMjpet();
 			break;
 		case '4':
-			image1.width = parent.mainFrame.document.body.clientWidth - 8; image1.height =parent.mainFrame.document.body.clientHeight;
-			image2.width = parent.mainFrame.document.body.clientWidth - 8; image2.height =parent.mainFrame.document.body.clientHeight;
+			image1.width = parent.mainFrame.document.body.clientWidth - 8; 
+			image1.height =parent.mainFrame.document.body.clientHeight-constBottomHeight;
+			image2.width = parent.mainFrame.document.body.clientWidth - 8; 
+			image2.height =parent.mainFrame.document.body.clientHeight-constBottomHeight;
+			
+			compareMjpet();
 			break;
 	}
+	
+	parent.mainFrame.videomainFrame.document.getElementById("videoBottom").style.width  = image2.width+"px";
 }
 
 
@@ -518,7 +530,7 @@ function MM_preloadImages() { //v3.0
 function isImagehtm()
 {
 	var key = parent.mainFrame.document.location.href;
-	if((key != null) &&(key.indexOf("image.htm",0) != -1))
+	if((key != null) &&(key.indexOf("image.asp",0) != -1))
 	{	
 		parent.mainFrame.document.getElementById('btnStop').click();	
 		return true;	
@@ -528,7 +540,7 @@ function isImagehtm()
 
 function Am_goMJPEGC() 
 { 
-	parent.mainFrame.videomainFrame.document.location.replace("/browse/mjpeg/image.htm");
+	parent.mainFrame.videomainFrame.document.location.replace("/browse/mjpeg/image.asp");
 }
 
 function funGoMJPEGC()
@@ -570,6 +582,7 @@ function BitSet()
 			MaxStyle();
 			break;
 	}
+	
 }
 
 function H264Style()
@@ -587,8 +600,8 @@ function H264Style()
 		$("#stopR").hide();
 		$("#startR").show();
 	}
-	parent.topFrame.document.getElementById("h264Snap").style.display = "inline";
-	parent.topFrame.document.getElementById("mjpegSnap").style.display  = "none";
+	//parent.topFrame.document.getElementById("h264Snap").style.display = "inline";
+	//parent.topFrame.document.getElementById("mjpegSnap").style.display  = "none";
 	//parent.topFrame.document.getElementById("startR").style.display = "inline";
 	//$("#startR").attr("disabled",false);	
 	setTimeout("playMode()",3000);
@@ -606,11 +619,13 @@ function MjpegStyle()
 	$("div[class='imgMask']").css('z-index',5);
 	$("#playModeSelect").prev().andSelf().attr("disabled",true);
 	videoType = 1;
-	parent.topFrame.document.getElementById("h264Snap").style.display = "none";
-	parent.topFrame.document.getElementById("mjpegSnap").style.display  = "inline";
-	//parent.topFrame.document.getElementById("startR").style.display = "none";
+	parent.mainFrame.videomainFrame.document.getElementById("h264Snap").style.display = "none";
+	parent.mainFrame.videomainFrame.document.getElementById("mjpegSnap").style.display  = "inline";
+	//parent.mainFrame.videomainFrame.document.getElementById("startR").style.display = "none";
+	//parent.mainFrame.videomainFrame.document.getElementById("startR").setAttribute("disabled",true);
 	//$("#startR").attr("disabled",true);	
 	//$("span[class='imgMask']").mousedown(function(){event.cancelBubble=true;})
+	
 }
 
 function playMode()
@@ -666,64 +681,6 @@ function audioInit()
 	}
 }
 
-function AOut(flag)//0:off 1:on
-{
-	if(flag)
-	{
-		$("#out_off").hide();
-		$("#out_on").show();
-		//parent.topFrame.document.getElementById("out_on").style.display = "none";
-		//parent.topFrame.document.getElementById("out_off").style.display = "inline";
-	}
-	else
-	{
-		$("#out_on").hide();
-		$("#out_off").show();
-		//parent.topFrame.document.getElementById("out_off").style.display = "none";
-		//parent.topFrame.document.getElementById("out_on").style.display = "inline";
-	}
-	parent.mainFrame.videomainFrame.Player.SetAudioRx(flag,0);
-	addAudiocookie("audioout="+flag.toString());
-}
-
-function AIn(flag)//0:off 1:on
-{
-	if(flag)
-	{
-		  try{
-			  if(parseInt($("#audioType").val()) == 2)
-				parent.mainFrame.videomainFrame.Player.SetAudioTxEncoderType(8);
-			  else
-				parent.mainFrame.videomainFrame.Player.SetAudioTxEncoderType(1);
-		  }catch(e){};
-		  var openOut = parent.mainFrame.videomainFrame.Player.SetAudioTx(flag);
-		  //openOut = 1;
-		  switch(openOut)
-		  {
-			case -1:
-				alert(["Plug in intercom.","请插入对讲设备."][Language]);
-				return; 
-			case 0:
-				alert(["Audio input is occupied.","音频输入被占用."][Language]);
-			  	return;
-			default: 
-			  $("#in_off").hide();
-			  $("#in_on").show();
-			//parent.topFrame.document.getElementById("in_on").style.display = "none";
-			//parent.topFrame.document.getElementById("in_off").style.display = "inline";
-			  break;  
-		  }
-	}
-	else
-	{	
-		parent.mainFrame.videomainFrame.Player.SetAudioTx(flag);		
-		$("#in_on").hide();
-		$("#in_off").show();
-		//parent.topFrame.document.getElementById("in_off").style.display = "none";
-		//parent.topFrame.document.getElementById("in_on").style.display = "inline";
-	}	
-	addAudiocookie("audioin="+flag.toString());
-}
 
 
 function addAudiocookie(cookiename)
@@ -731,66 +688,7 @@ function addAudiocookie(cookiename)
 	document.cookie = cookiename + ";path=/";
 }
 
-function startRecord()
-{
-		var path = document.getElementById("videoPath").value;
-		var type = document.getElementById("videoType").value;
-		var player = parent.mainFrame.videomainFrame.Player;
-		var flag = player.SetRecordPath(path,parseInt(type));
-		if(!flag)
-		{
-			var defaultPath = player.GetRecordPath();
-			document.getElementById("videoPath").value = defaultPath;
-			$.ajax({
-				type: "POST",
-				url:"/form/IVPathSet",
-				data: "flag=2&videopath="+defaultPath+"&videoType="+type
-			});
-		}			
-	    parent.mainFrame.videomainFrame.Player.StartRecord();
-		parent.topFrame.document.getElementById("startR").style.display = "none";
-		parent.topFrame.document.getElementById("stopR").style.display  = "inline";
 
-}
-
-function stopRecord()
-{
-	try{
-		parent.mainFrame.videomainFrame.Player.StopRecord();
-	}catch(e){};
-	parent.topFrame.document.getElementById("startR").style.display = "inline";
-	parent.topFrame.document.getElementById("stopR").style.display  = "none";
-}
-
-function startZoom()
-{
-	try{
-	    parent.mainFrame.videomainFrame.Player.SetDigitalZoom(1);
-	}catch(e){};
-	parent.topFrame.document.getElementById("startZ").style.display = "none";
-	parent.topFrame.document.getElementById("stopZ").style.display  = "inline";
-	addAudiocookie("zoom_status=1");
-}
-
-function stopZoom()
-{
-	try{
-		parent.mainFrame.videomainFrame.Player.SetDigitalZoom(0);
-	}catch(e){};
-	parent.topFrame.document.getElementById("startZ").style.display = "inline";
-	parent.topFrame.document.getElementById("stopZ").style.display  = "none";
-	addAudiocookie("zoom_status=0");
-}
-
-function openVideoDir()
-{
-
-		var path = document.getElementById("videoPath").value;
-	//	if(checkPath(path))
-		{
-			parent.mainFrame.videomainFrame.Player.OpenSpecifyFolder(path);
-		}
-}
 
 function hoverpic(id,hpic,pic)
 {
@@ -834,30 +732,9 @@ function picInit()
 	
 }
 
-function setSnapShot()//ctrl + s fullscreen snap
-{
-		var type = document.getElementById("imageType").value;
-		var player = parent.mainFrame.videomainFrame.Player;
-		var flag = player.SetSnapShotPath(document.getElementById("imagePath").value,parseInt(type));
-		if(!flag)
-		{
-			var defaultPath = player.GetSnapShotPath();
-			document.getElementById("imagePath").value = defaultPath;
-			$.ajax({
-				type: "POST",
-				url:"/form/IVPathSet",
-				data: "flag=1&imagepath="+defaultPath+"&imageType="+type
-			});
-		}
-		parent.mainFrame.videomainFrame.Player.SnapShot();
-}
 
 
-function openImgDir()
-{
-	var path = document.getElementById("imagePath").value;
-	parent.mainFrame.videomainFrame.Player.OpenSpecifyFolder(path);
-}
+
 /*************************************************************************************
  * motion and privacy
  ************************************************************************************/
@@ -958,7 +835,7 @@ function frequercyCheck(){
 function ytFunctionInit()
 {
 //	var id = getCookie("dev");
-//	if(id=='V1492N' || id=='V6010'|| id=='V6011'|| id=='V6012'||id=='V6013'||id=='V6014'||id=='V6015'||id=='V6016'||id=='V6017')
+//	if(id=='V12N' || id=='V6010'|| id=='V6011'|| id=='V6012'||id=='V6013'||id=='V6014'||id=='V6015'||id=='V6016'||id=='V6017')
 //		$("#ptz").show();
 //alert($("#panSpeedGet").val() + $("#tiltSpeedGet").val() + $("#focusSpeedGet").val() + $("#zoomSpeedGet").val());
 	$("#jsPanSpeed").val($("#panSpeedGet").val());

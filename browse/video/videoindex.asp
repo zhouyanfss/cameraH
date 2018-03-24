@@ -7,6 +7,7 @@
 <script language="JavaScript" type="text/JavaScript">
 
 var W,H;
+var constBottomHeight = 32;
 function getRes(i)
 {
 	var res;
@@ -24,31 +25,44 @@ function getRes(i)
 }
 function maxWH()
 {
-	var rMax = parent.leftFrame.document.getElementById('resMax').value;
+	var rMax = parent.rightFrame.document.getElementById('resMax').value;
 	getRes(rMax);
 }
 
 
 function minWH()
 {
-	var rMin = parent.leftFrame.document.getElementById('resMin').value;
+	var rMin = parent.rightFrame.document.getElementById('resMin').value;
 	getRes(rMin);
 }
 
 
 function MjpegWH()
 {
-	var rMjpeg = parent.leftFrame.document.getElementById('resMjpeg').value;
+	var rMjpeg = parent.rightFrame.document.getElementById('resMjpeg').value;
 	getRes(rMjpeg);
 }
 
-
+function resizeBottom(type)
+{
+	var width;
+	if(type == "object")
+	{
+		width = parent.mainFrame.videomainFrame.Player.width;
+	}
+	else
+	{
+		width = parent.mainFrame.videomainFrame.document.getElementById('myImg2').width;
+	}
+	
+	parent.mainFrame.videomainFrame.document.getElementById("videoBottom").style.width  = width+"px";
+}
 
 window.onresize = function adaptwindow(){
 try
 {	
-	var sizeselect = parent.leftFrame.document.getElementById('videoSizeSelect').value;
-	var videotype = parent.leftFrame.document.getElementById('BitSelect').value;
+	var sizeselect = parent.rightFrame.document.getElementById('videoSizeSelect').value;
+	var videotype = parent.rightFrame.document.getElementById('BitSelect').value;
 
 	switch(videotype)
 	{
@@ -62,10 +76,14 @@ try
 			if(sizeselect == 4)
 			{
 				parent.mainFrame.videomainFrame.document.getElementById('myImg1').width = parent.parent.mainFrame.document.documentElement.clientWidth - 8;
-				parent.mainFrame.videomainFrame.document.getElementById('myImg1').height = parent.parent.mainFrame.document.documentElement.clientHeight;
+				parent.mainFrame.videomainFrame.document.getElementById('myImg1').height = parent.parent.mainFrame.document.documentElement.clientHeight -constBottomHeight;
 				parent.mainFrame.videomainFrame.document.getElementById('myImg2').width = parent.parent.mainFrame.document.documentElement.clientWidth - 8;
-				parent.mainFrame.videomainFrame.document.getElementById('myImg2').height = parent.parent.mainFrame.document.documentElement.clientHeight;
+				parent.mainFrame.videomainFrame.document.getElementById('myImg2').height = parent.parent.mainFrame.document.documentElement.clientHeight -constBottomHeight;
 			}
+			
+			
+			setTimeout("resizeBottom('mjpeg')",200);
+			
 			break;
 		case '1'://minor
 			if(typeof(parent.mainFrame.videomainFrame.Player) == "object")
@@ -81,6 +99,8 @@ try
 					fullScreen();
 				}
 			}
+			
+			setTimeout("resizeBottom('object')",200);
 			break;
 		default:
 			if(typeof(parent.mainFrame.videomainFrame.Player) == "object")
@@ -96,6 +116,8 @@ try
 					fullScreen();
 				}
 			}
+			
+			setTimeout("resizeBottom('object')",200);
 			break;
 			
 	}
@@ -108,13 +130,15 @@ catch(e){setTimeout("adaptwindow()",500);}
 function fullScreen()
 {
 			var obj = parent.mainFrame.videomainFrame.Player;
-			obj.height = parent.mainFrame.videomainFrame.document.documentElement.clientHeight - 4;
+			obj.height = parent.mainFrame.videomainFrame.document.documentElement.clientHeight - 4 -constBottomHeight;
 			obj.width = parent.mainFrame.videomainFrame.document.documentElement.clientWidth;
+			
+			
 }
 
 function compare()
 {
-	var ratio = parent.mainFrame.videomainFrame.document.documentElement.clientWidth/parent.mainFrame.videomainFrame.document.documentElement.clientHeight;
+	var ratio = parent.mainFrame.videomainFrame.document.documentElement.clientWidth/(parent.mainFrame.videomainFrame.document.documentElement.clientHeight -constBottomHeight);
 	var obj = parent.mainFrame.videomainFrame.Player;
 	
 	if(ratio >=  W/H)
@@ -122,7 +146,7 @@ function compare()
 		if(parent.mainFrame.videomainFrame.document.documentElement.clientHeight >0)
 		{
 
-				obj.height = parent.mainFrame.videomainFrame.document.documentElement.clientHeight - 4;
+				obj.height = parent.mainFrame.videomainFrame.document.documentElement.clientHeight -constBottomHeight;
 				obj.width = Math.floor((parent.mainFrame.videomainFrame.document.documentElement.clientHeight )*W/H);
 		}
 		else
@@ -152,12 +176,13 @@ function compareMjpet()
 	var ratio = (parent.mainFrame.document.body.clientWidth - 8)/parent.mainFrame.document.body.clientHeight;	
 	var image1 = parent.mainFrame.videomainFrame.document.getElementById('myImg1');
 	var image2 = parent.mainFrame.videomainFrame.document.getElementById('myImg2');
+	var mainAreaHeight = parent.mainFrame.document.body.clientHeight -constBottomHeight;
 	if(ratio > W/H)
 	{
 			if(parent.mainFrame.document.body.clientHeight > 0)
 			{
-				image1.width = Math.floor((parent.mainFrame.document.body.clientHeight)*W/H); image1.height = parent.mainFrame.document.body.clientHeight;
-				image2.width = Math.floor((parent.mainFrame.document.body.clientHeight)*W/H); image2.height = parent.mainFrame.document.body.clientHeight;
+				image1.width = Math.floor((mainAreaHeight)*W/H); image1.height = mainAreaHeight;
+				image2.width = Math.floor((mainAreaHeight)*W/H); image2.height = mainAreaHeight;
 			}
 			else
 			{
@@ -182,11 +207,12 @@ function compareMjpet()
 
 </script>
 </head>
-
-<frameset rows="*" cols="8,*" framespacing="0" frameborder="no" border="0" name="mid" id="mid">
-  <frame src="spread.asp" name="spreadFrame" id="spreadFrame" scrolling="NO" noresize/>
+<frameset rows="*" cols="*,8" framespacing="0" frameborder="no" border="0" name="mid" id="mid">
   <frame src="video.asp" name="videomainFrame" id="videomainFrame" />
+  <frame src="spread.asp" name="spreadFrame" id="spreadFrame" scrolling="NO" noresize/>
 </frameset>
-<noframes><body>
-</body></noframes>
+<noframes>
+	<body>
+	</body>
+</noframes>
 </html>

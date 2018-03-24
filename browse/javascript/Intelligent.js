@@ -33,9 +33,9 @@ function videoShow(num){
 	var hankType = $('.videoClass');
 	var liChoose = $('.choose');
 	hankType.css("display", "none");
-	liChoose.css({"border-bottom":"1px #F9F6F6 solid","background-color": ""});
+	liChoose.css({"background-color": ""});
 	hankType.eq(num).css("display", "block");
-	liChoose.eq(num).css({"border-bottom":"1px #BBB solid","background-color": COLOR});
+	liChoose.eq(num).css({"background-color": "#e9e6e6"});
 	
 	jsVideoNow = 0;
 	jsVideoList = num;

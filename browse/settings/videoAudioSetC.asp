@@ -34,8 +34,8 @@ window.onload=function(){
 <input type="hidden" id="area_check" value='<%videoparaGet("area_check", "net");%>' />
 <input type="hidden" id="SHDBType" value='<%NetparaGet("SHDBType","net");%>' />
 <iframe name="hideFrame" style=" display:none"></iframe>
-<div class="topMenu" style="min-width:650px;">
-	<ul style="width:650px;">
+<div class="topMenu"  style="width:100%;">
+	<ul style="width:100%;">
     	<li class="choose" onclick="videoShow(0)">视频</li>
         <li class="choose" onclick="videoShow(1)">文字叠加</li>
         <li class="choose" onclick="videoShow(2)">移动侦测</li>

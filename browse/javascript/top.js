@@ -104,6 +104,7 @@ function backsetting(page1,page2)
 	var dataObj = new Date();
 	top.leftFrame.document.location.replace("/browse/" + page1 + "?_="+dataObj.getTime());
 	top.mainFrame.document.location.replace("/browse/settings/" + page2 + "?_="+dataObj.getTime());
+	
 }
 
 
@@ -111,7 +112,7 @@ function backsetting(page1,page2)
 function backlive(page)
 {
 	var dataObj = new Date();
-	top.leftFrame.document.location.replace("/browse/video/"+ page + "?_=" +dataObj.getTime());
+	top.rightFrame.document.location.replace("/browse/video/"+ page + "?_=" +dataObj.getTime());
 	top.mainFrame.document.location.replace("/browse/video/videoindex.asp"+ "?_=" + dataObj.getTime());
 }
 
@@ -121,24 +122,41 @@ function backlive(page)
 
 function setDownStyle()
 {
-	document.getElementById('li1').style.backgroundImage = "url(../images/topbutton1.gif)";
-	document.getElementById('li0').style.backgroundImage = "url(../images/topbutton0.gif)";
+	//// document.getElementById('li1').style.backgroundImage = "url(../images/topbutton1.gif)";
+	//// document.getElementById('li0').style.backgroundImage = "url(../images/topbutton0.gif)";
+	
+	// document.getElementById('li1').style.backgroundColor = "#505050";	
+	// document.getElementById('li1').style.color = "#ffffff";
+	
+	// document.getElementById('li0').style.backgroundColor = "#cfcece";
+	// document.getElementById('li0').style.color = "#000000";
+	
+	$(".topmenu ul li").removeClass("selected");
+	$("#li1").addClass("selected");
 }
 
 function realScanDownStyle()
 {
-	document.getElementById('li0').style.backgroundImage = "url(../images/topbutton1.gif)";
-	document.getElementById('li1').style.backgroundImage = "url(../images/topbutton0.gif)";
+/* 	// document.getElementById('li0').style.backgroundImage = "url(../images/topbutton1.gif)";
+	// document.getElementById('li1').style.backgroundImage = "url(../images/topbutton0.gif)";
+	
+	document.getElementById('li0').style.backgroundColor = "#505050";	
+	document.getElementById('li0').style.color = "#ffffff";
+	
+	document.getElementById('li1').style.backgroundColor = "#cfcece";
+	document.getElementById('li1').style.color = "#000000"; */
+		$(".topmenu ul li").removeClass("selected");
+	$("#li0").addClass("selected");
 	
 }
 function leftFrameNarrow()
 {
-	parent.document.getElementById("main").cols = "260,*";
+	parent.document.getElementById("main").cols = "260,*,0";
 }
 
 function leftFrameBroad()
 {
-	parent.document.getElementById("main").cols = "280,*";	
+	parent.document.getElementById("main").cols = "0,*,280";	
 }
 
 function lanSelectDisappear()
@@ -152,17 +170,22 @@ function lanSelectOn()
 /*20130107 add*/
 function butSelectDisappear()
 {	
-	document.getElementById('butSelect').style.display = 'none';
+	if(document.getElementById('butSelect')){
+		document.getElementById('butSelect').style.display = 'none';
+	}
+	
 }
 
 function butSelectOn()
 {	
+if(document.getElementById('butSelect'))
 	document.getElementById('butSelect').style.display = 'inline';
 }
 /*justin add 2013.5.7*/
 function recordSelectOn()
 {
-	document.getElementById('startR').style.display = 'block';
+	//by zhouyan
+	//document.getElementById('startR').style.display = 'block';
 }
 /********************EN***************************/
 function set(page1,page2)
@@ -175,6 +198,21 @@ function set(page1,page2)
 		backsetting(page1,page2);
 	}
 	catch(e){setTimeout(arguments.callee,200);}
+}
+//add by zhouyan for TopMenu replayBtn at 2018/3/5
+function replay(page)
+{
+	$(".topmenu ul li").removeClass("selected");
+	$("#li2").addClass("selected");
+	
+	parent.document.getElementById("main").cols = "0,*,0";	
+	try{
+		var dataObj = new Date();
+		top.mainFrame.document.location.replace("/browse/settings/" + page + "?_="+dataObj.getTime());
+	}
+	catch(e)
+	{setTimeout(arguments.callee,200);}
+
 }
 
 function realScan(page)

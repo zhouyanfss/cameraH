@@ -61,7 +61,7 @@ IMG {
     border:#C8C8C8 solid;   
 	border-width:1px 0px 0px 1px; 
 	/*background: #F6F6F6;*/
-	background: #CFDFEF;
+	background: #e9e6e6;
 	margin-top:25px;
 	   
 }
@@ -187,7 +187,7 @@ font{
 }
 
 .ButtonSet{
-	background-color:#CFDFEF;
+	background-color:#b9b6b6;
 	font-size:14px;
 	padding: 0;
 	border: 0;	
@@ -197,8 +197,7 @@ font{
 	margin-top:5px;
 }
 .alarmName{
-	background-color:#CFDFEF;
-	width: 99%;
+	background-color:#e9e6e6;
 	min-width: 660px;
 	height: 25px;
 	padding: 0;

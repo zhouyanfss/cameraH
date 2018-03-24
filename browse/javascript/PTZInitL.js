@@ -4,7 +4,7 @@ $.fn.jQueryPie
   (
 	  {
 		  target: '#pie',
-		  pics: ["../images/PTZimage/p0.gif", "../images/PTZimage/p1.gif", "../images/PTZimage/p2.gif", "../images/PTZimage/p3.gif", "../images/PTZimage/p4.gif", "../images/PTZimage/p5.gif", "../images/PTZimage/p6.gif", "../images/PTZimage/p7.gif", "../images/PTZimage/p8.gif"], 
+		  pics: ["../images/PTZimage/p0.png", "../images/PTZimage/p1.png", "../images/PTZimage/p2.png", "../images/PTZimage/p3.png", "../images/PTZimage/p4.png", "../images/PTZimage/p5.png", "../images/PTZimage/p6.png", "../images/PTZimage/p7.png", "../images/PTZimage/p8.png"], 
 		  codeVal: [4,7,1,6,3,5,2,8],  
 		  ox: 65,
 		  oy: 64,

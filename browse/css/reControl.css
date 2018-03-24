@@ -13,10 +13,9 @@ body{
 .topMenu{
 	width: 99%;
 	min-width: 750px;
-	height: 30px;
-	border-bottom: #BBB 1px solid;
+	height: 28px;
+	background-color:#999;
 	overflow:hidden;
-	margin-bottom: 1px;
 	margin-left: 1px;
 }
 
@@ -40,10 +39,6 @@ body{
 	font-weight: bold;
 	font-size: 14px;
 	cursor: pointer;
-	border-right:1px #F9F6F6 solid;
-	border-bottom:1px #F9F6F6 solid;
-	border-top:1px #F9F6F6 solid;
-	background-color:#F2F2F2;
 	padding: 0;
 }
 .hankClass{
@@ -55,8 +50,7 @@ body{
 }
 
 .hankName{
-	background-color:#CFDFEF;
-	width: 99%;
+	background-color:#e9e6e6;
 	min-width: 750px;
 	height: 25px;
 	padding: 0;
@@ -169,7 +163,7 @@ body{
 .SDbto{
 	float:left;
 	display:inline-block;
-	background-color:#CFDFEF;
+	background-color:#b9b6b6;
 	height: 30px;
 	width: 81px; 
 	background-repeat: no-repeat;

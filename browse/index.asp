@@ -11,7 +11,8 @@ function frameLoad(top,left)
 {
 	var timeVal = (new Date()).getTime();
 	document.getElementById("topFrame").src = top+"?_="+timeVal;
-	document.getElementById("leftFrame").src = left+"?_="+timeVal;
+	document.getElementById("rightFrame").src = left+"?_="+timeVal;
+
 }
 
 function initFrame()
@@ -29,14 +30,18 @@ function initFrame()
 		frameLoad("/browse/top/roottop.asp","/browse/video/videoset.asp");
 
 }
+
 </script>
 </head>
 
-<frameset rows="115,*" cols="*" frameborder="no" border="0" framespacing="0" onLoad="initFrame()">
+<frameset rows="67,*" cols="*" frameborder="no" border="0" framespacing="0" style="background-color:#aaaaaa;" onLoad="initFrame()">
   <frame name="topFrame" scrolling="No" noresize="noresize" id="topFrame" />
-  <frameset cols="280,*" id="main" name="main" frameborder="no" border="0" framespacing="0">
-    <frame name="leftFrame" noresize="noresize" id="leftFrame" style="padding:0 0"  />
+
+  <frameset cols="0,*,280" id="main" name="main" frameborder="no" border="0" framespacing="0">
+  
+    <frame name="leftFrame" noresize="noresize" id="leftFrame" style="padding:0 0;border:1px solid #555;"  />
     <frame name="mainFrame" id="mainFrame"  />
+    <frame name="rightFrame" id="rightFrame" style="padding:0 0"  />
   </frameset>
 </frameset>
 <noframes><body>

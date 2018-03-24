@@ -86,7 +86,7 @@ var typeError = [{empty:"Please select a file!\n", wrong:"Please select a file o
 var MACHINE_TIME = 0;//设备时间，单位为毫秒
 var DIALOG = null;//全屏禁用的对话框
 var gTimeGetID = 0;
-var chipID = top.topFrame.document.getElementById('chipIDGet').value;
+var chipID = top.topFrame.document.getElementById('chipIDGet')?top.topFrame.document.getElementById('chipIDGet').value:0;
 
 /*formName定义的form地址，如“/form/getTime”，funHander为处理函数，包含一个参数，即请求成功后返回的字符*/
 function ajaxGetData(formName,funHander){

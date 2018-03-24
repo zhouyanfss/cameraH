@@ -23,5 +23,6 @@ else
 	document.write('<PARAM NAME="_ExtentX" VALUE="19050">');
 	document.write('<PARAM NAME="_ExtentY" VALUE="12700">');
 	document.write('<PARAM NAME="_StockProps" VALUE="0">');
+	document.write('<PARAM NAME="wmode" VALUE="transparent">');
 	document.write('</OBJECT>');
 }

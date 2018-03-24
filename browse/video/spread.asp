@@ -8,7 +8,7 @@
 html,body {
 	margin:0;
 	padding:0;
-	background-color:#CCC;
+	background-color:#999999;
 	height:100%;
 }
 
@@ -33,14 +33,14 @@ function hiddenfun()
 {
 	document.getElementById("imgHidden").style.display = "none";
 	document.getElementById("imgSpread").style.display = "inline";
-	top.document.getElementById("main").cols = "0,*";
+	top.document.getElementById("main").cols = "0,*,0";
 
 }
 function spreadfun()
 {
 	document.getElementById("imgHidden").style.display = "inline";
 	document.getElementById("imgSpread").style.display = "none";
-	top.document.getElementById("main").cols = "280,*";	
+	top.document.getElementById("main").cols = "0,*,280";	
 }
 
 document.documentElement.oncontextmenu = function(){return false;}
@@ -50,8 +50,8 @@ document.documentElement.oncontextmenu = function(){return false;}
 </head>
 <body>
 <div class="spreadDiv">
-<p><img id="imgHidden" src="../images/hidden.gif"  width="7" height="36" onclick="hiddenfun();"  border="0" />
-  <img id="imgSpread" src="../images/spread.gif"  width="7" height="36" onclick="spreadfun();" border="0" style="display:none" /></p>
+<p><img id="imgHidden" src="../images/hiddenright.gif"  width="7" height="36" onclick="hiddenfun();"  border="0" />
+  <img id="imgSpread" src="../images/hiddenleft.gif"  width="7" height="36" onclick="spreadfun();" border="0" style="display:none" /></p>
 </div>
 
 </body>

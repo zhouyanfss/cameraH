@@ -12,11 +12,11 @@ body{
 }
 
 .topMenu{
-	width: 99%;
 	height: 30px;
-	border-bottom: #BBB 1px solid;
-	margin-bottom: 1px;
-	margin-left: 1px;
+/*	border-bottom: #BBB 1px solid;
+	margin-bottom: 1px;*/
+	margin-left: 1px; 
+	background-color:#999;
 }
 
 .topMenu ul{
@@ -28,21 +28,20 @@ body{
 
 .choose{
 	width: 90px;
-	height: 28px;
+	/* height: 28px; */
 	overflow:hidden;
 	margin: 0;
 	text-align: center;
 	vertical-align: middle;
-	line-height: 32px;
+	line-height: 30px;
 	list-style: none;
 	float: left;
 	font-weight: bold;
 	font-size: 14px;
 	cursor: pointer;
-	border-right:1px #F9F6F6 solid;
+/* 	border-right:1px #F9F6F6 solid;
 	border-bottom:1px #F9F6F6 solid;
-	border-top:1px #F9F6F6 solid;
-	background-color:#F2F2F2;
+	border-top:1px #F9F6F6 solid; */
 	padding: 0;
 }
 
@@ -56,8 +55,8 @@ body{
 }
 
 .hankName{
-	background-color:#CFDFEF;
-	width: 99%;
+	/* background-color:#CFDFEF; */
+	background-color:#e9e6e6;
 	min-width: 830px;
 	height: 25px;
 	padding: 0;
@@ -249,7 +248,8 @@ body{
 }
 
 .ButtonLeft{
-	background-color:#CFDFEF;
+	/* background-color:#CFDFEF; */
+	background-color:#b9b6b6;
 	background-repeat: no-repeat;
 	font-size:14px;
 	padding: 0;
@@ -262,7 +262,8 @@ body{
 }
 
 .ButtonRight{
-	background-color:#CFDFEF;
+	/* background-color:#CFDFEF; */
+	background-color:#b9b6b6;
 	background-repeat: no-repeat;
 	font-size: 14px;
 	padding: 0;
@@ -318,7 +319,8 @@ body{
 }
 
 .ButtonOnly{
-	background-color:#CFDFEF;
+	/* background-color:#CFDFEF; */
+	background-color:#b9b6b6;
 	background-repeat: no-repeat;
 	font-size:14px;
 	padding: 0;

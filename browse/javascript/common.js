@@ -1,6 +1,6 @@
 var iframeFun = function(){};
 var LANGUAGE = 0;//页面语言,0：英文；1：中文
-var COLOR = "#CFDFEF";
+var COLOR = "#e9e6e6";
 /*********首栏切换******************/
 function sysShow(className,num){
 	var hankType = $("."+className);
@@ -8,8 +8,8 @@ function sysShow(className,num){
 
 	hankType.css({"display":"none"});
 	hankType.eq(num).css("display","block");
-	liChoose.css({"border-bottom":"1px #F9F9F9 solid","background-color": ""});
-	liChoose.eq(num).css({"border-bottom":"1px #BBB solid","background-color": COLOR});
+	liChoose.css({"border":"none","background-color": "","line-height":""});
+	liChoose.eq(num).css({"background-color": COLOR});
 }
 
 

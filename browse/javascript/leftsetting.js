@@ -24,8 +24,9 @@ function LeftSetOnload()
 
 function onChange(i)
 {
-	$(".leftul li").css("background-image","");
-	$("#li"+i).css("background-image","url(images/bar_1.gif)");
+	//$(".leftul li").css("background-color","");
+	$(".leftul li").removeClass("selected");
+	$("#li"+i).addClass("selected");
 }
 
 function loadRef(myURL)

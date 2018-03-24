@@ -23,12 +23,14 @@ window.onload = function(){
 <input type="hidden" id="Hi3516C" value='<%videoparaGet("hi3516c", "net");%>' />
 <input type="hidden" id="Hi3519" value='<%videoparaGet("hi3519", "net");%>' />
 <iframe id="hideFrame" name="hideFrame" style=" display:none"></iframe>
+<!--
 <div class="topMenu">
 	<ul style="width:190px">
     	<li class="choose" onclick="stopPlay();sysShow('hankClass',0)">Settings</li>
         <li class="choose" onclick="sysShow('hankClass',1);setTimeout('replayerInit();replayerLang()',100);">Playback</li>
     </ul>
 </div>
+-->
 
 <div class="hankClass">
     <div class="hankName"><label>Recording Control</label></div>

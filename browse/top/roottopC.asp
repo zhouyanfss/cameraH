@@ -21,16 +21,20 @@
 <input type="hidden" id="deviceIDGet" value='<%DeviceIDGet("deviceid","net");%>' />
 <input type="hidden" id="videoPort" value="<%NetPortGet("VideoPort","net");%>">
 <input type="hidden" id="rtspPort" value="<%NetPortGet("RtspPort","net");%>">
+<!--
 <div class="topImg">
 	<div class="logoPic"></div>
 	<label class="versionLable" style="display:none;"><%VersionGet("version","net");%></label>
-<!--	<div class="topImgLamp"><img id="img1" src="../images/off.gif"/><img id="img2" src="../images/on.gif" style="display:none;"></div> -->
 </div>
-
+-->
 <div class="topmenu">
+	<div class="logoPic">
+
+	</div>
 	<ul>
-		<li id="li0" onclick="realScan('videosetC.asp');" style="background-image:url(../images/topbutton1.gif)">浏览</li>
+		<li id="li0" class="selected" onclick="realScan('videosetC.asp');" >预览</li>
 		<li id="li1" onclick="set('rootleftsetC.htm','sysInfC.asp');">设置</li>
+		<li id="li2" onclick="replay('playbackC.asp');">回放</li>
 	</ul>	
     <select name="lanSelect" id="lanSelect" onchange="lanChange();">
 		<option value="0">English</option>
@@ -48,6 +52,10 @@
 	<input type="hidden" name="imageType" id="imageType" value='<%IVPathGet("imageType","net");%>' />
 	<input type="hidden" name="videoType" id="videoType" value='<%IVPathGet("videoType","net");%>'/>
     <input type="hidden" name="audioType" id="audioType" value='<%audioparaGet("AudioFormat","net");%>' />
+	
+	
+<div class="selectButton" id="butSelect"></div>
+<!--
 <div class="selectButton" id="butSelect">
 	<div class="unitDivIn">
 			<img name="in_on" id="in_on" onclick="AIn(0);" style="display:none"  src="../images/audio_in.gif"  title="关闭音频输入">
@@ -110,6 +118,8 @@
 		<div class="imgMask"></div>	
 	</div>
 </div>
+-->
 </div>
+<div style="height:5px; background-color:#999999; display:block;width:100%;position:relative; min-width:900px;"></div>
 </body>
 </html>

@@ -55,11 +55,11 @@ body{
         <div id="modeHank"></div>
 	</div>
 	-->
-	<div class="listdiven" id="pNod1" onClick="showList(this.id);"><div><label>View</label><img id="pNod1_img" src="../images/bit_up.gif"></div></div>
+	<div style="display:none"  class="listdiven" id="pNod1" onClick="showList(this.id);"><div><label>View</label><img id="pNod1_img" src="../images/bit_up.gif"></div></div>
 
 	
   
-<div id="pNod1_div" class="childdiv">
+<div id="pNod1_div" class="childdiv" style="display:none">
 			<input type="hidden" name="resMax" id="resMax" value="<%videoparaGet("resolution","net");%>" /> 
 			<input type="hidden" name="resMin" id="resMin" value="<%ExtVideoparaGet("resolution","net");%>" /> 
 			<input type="hidden" name="resMjpeg" id="resMjpeg" value="<%mjpegparaGet("resolution","net");%>" />
@@ -189,9 +189,9 @@ body{
 <div id="ptz" style="display:block;">
     
   <div class="listdiven" id="pNod3" onClick="showList(this.id);">
-   <div><label>PTZ control</label><img src="../images/bit_down.gif"  id="pNod3_img"></div>
+   <div><label>PTZ control</label></div>
 </div>
-<div id="pNod3_div" class="childdiv" align="center" style="display:none">
+<div id="pNod3_div" class="childdiv" align="center">
 	<div class="ptzDiv" align="center">
 	<form name="PTZForm" id="PTZForm" method="post" action="/form/setPTZCfg" target="hideframe" >
       <input id="focusSpeedGet" type="hidden" value="<%getPTZCfg("focusSpeed_", "net");%>" />
@@ -263,25 +263,21 @@ body{
                 </select>
               </div>
     </form>
-  </div>
-  
-</div>
-
-<div class="listdiv" id="pNod4" onClick="showList(this.id);" style="display:block">
-    <div><label>PTZ function</label><img src="../images/bit_down.gif"  id="pNod4_img"></div>
-</div>
-<div id="pNod4_div" class="childdiv" style="display:none">
-	<form id="livePosHankForm" method="post" action="/form/presetSet" target="hideframe">
+	
+<form id="livePosHankForm" method="post" action="/form/presetSet" target="hideframe">
     	<input type="hidden" name="flag" id="jslivePresetFlag" />
         <input type="hidden" name="existFlag" id="jslivePresetExist" />
 		<input type="hidden" name="language" value="cn" />
-		<div class="rowDivY">
-        	<div class="testDivBSD"><label>Preset</label></div>
-            <div class="buttonDivBSD"><input name="Input" type="button" value="Call"  onclick="callPst();"/></div>
+		<div class="rowDivY" style="width:100%;">
+        	<div class="testDivBSD" style="padding-left:37px; padding-bottom:20px;padding-top:20px;">
+				<label style="float:left;">Preset</label>
+				<select name="presetNum" id="jsLivePresetNo"  style="float:left; margin-left:34px;width:75px;" class="domSelectBSD" onchange="ajaxHankGet('/user/presetAjax','livePosHankForm','jsLivePresetNo');">
+				</select> 
+			</div>
+			<div class="buttonDivBSD" style="padding-right:39px;"><input name="Input" type="button" value="Call"  onclick="callPst();"/></div>
             <div class="buttonDivBSD"><input name="Input" type="button" value="Mov"  onclick="clearPst();"/></div>
             <div class="buttonDivBSD"><input name="Input" type="button" value="Set"  onclick="setPst();"/></div>
-			<select name="presetNum" id="jsLivePresetNo" class="domSelectBSD" onchange="ajaxHankGet('/user/presetAjax','livePosHankForm','jsLivePresetNo');">
-			</select> 
+
 		</div>
     </form>
 
@@ -310,21 +306,33 @@ body{
     	<input type="hidden" name="flag" id="jsliveTourFlag" />
         <input type="hidden" name="existFlag" id="jsliveTourExist" />
         <input type="hidden" name="presetValue" id="jsPresetValue" />
-		<div class="rowDivY">
-			<div class="testDivBSD"><label>Tour</label></div>
-            <div class="buttonDiv" style="margin-right:30px;"><input name="Input" type="button" class="ButtonSet" value="Call"  onclick="callTour();"/></div>
-			<select name="tourNum" id="jsliveTourNum" class="domSelectBSD" onchange="ajaxHankGet('/user/tourAjax','liveTourForm','jsliveTourNum')"></select> 
+		<div class="rowDivY" style="width:100%;">
+			<div class="testDivBSD" style="padding-left:37px;padding-bottom:20px;padding-top:20px;">
+				<label style="float:left;line-height:26px;">Tour</label>
+				
+				<select name="tourNum" id="jsliveTourNum" style="float:left; margin-left:10px;margin-top:3px;" class="domSelectBSD" onchange="ajaxHankGet('/user/tourAjax','liveTourForm','jsliveTourNum')">
+				</select> 
+				<div class="buttonDivBSD" style="margin-right:83px;"><input name="Input" type="button" class="button" value="Call"  onclick="callTour();"/></div>
+			</div>
 		</div>
     </form>
     <form name="YunTaiForm" id="jsYunTaiForm" method="post" action="/form/setSpecialFunc" target="hideframe">
         <div class="autoScan" align="center">
              <input type="hidden" name="flag" id="autoscanflag" value="0"/>
 			 <input type="hidden" name="command" id="jscommand" value="0"/>
-		     <input type="button" name="autoscan" class="scan" id="autoscan"  value="Auto-pan" onclick="CallAtpPtn(2);"/>&nbsp;
+		     <input type="button" name="autoscan" style="background-image:url(../images/scan_big.gif); width:100px;" class="scan" id="autoscan"  value="Auto-pan" onclick="CallAtpPtn(2);"/>&nbsp;
 		     <input type="button" name="flip" class="scan" id="jsflip"  style="display:none"  value="Pattern" onclick="CallAtpPtn(3);"/>
 		</div>
 	</form>
+	
+  </div>
+  
 </div>
+<!--
+<div class="listdiv" id="pNod4" onClick="showList(this.id);" style="display:block">
+    <div><label>PTZ function</label><img src="../images/bit_down.gif"  id="pNod4_img"></div>
+</div>
+-->
 
 <!--
 <div class="listdiv" id="pNod5" onClick="showList(this.id);">

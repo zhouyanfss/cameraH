@@ -506,7 +506,7 @@ function divShow(index)
 	var li = $(".choose");
 	
 	li.css({"border-bottom":"1px #F9F6F6 solid","background-color": ""});
-	li.eq(index).css({"border-bottom":"1px #BBB solid","background-color": COLOR});
+	li.eq(index).css({"background-color": "#e9e6e6"});
 	  
 	$("div[id^= 'cameraDiv']").hide();
 	$("div[id="+divId +"]").show();	

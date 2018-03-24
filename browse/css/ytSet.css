@@ -16,17 +16,17 @@ form{
 	}
 
 .topMenu{
-	width: 99%;
 	min-width: 750px;
-	height: 30px;
-	border-bottom: #BBB 1px solid;
+	height: 28px;
+	/* border-bottom: #BBB 1px solid; */
 	overflow:visible;
 	margin-bottom: 1px;
 	margin-left: 1px;
+	
+	background-color:#999;
 }
 
 .topMenu ul{
-	height: 29px;
 	margin: 0px;
 	margin-bottom: 0px;
 	padding: 0;
@@ -38,16 +38,16 @@ form{
 	margin: 0;
 	text-align: center;
 	vertical-align: middle;
-	line-height: 32px;
+	line-height: 28px;
 	list-style: none;
 	float: left;
 	font-weight: bold;
 	font-size: 14px;
 	cursor: pointer;
-	border-right:1px #F9F6F6 solid;
+/* 	border-right:1px #F9F6F6 solid;
 	border-bottom:1px #F9F6F6 solid;
 	border-top:1px #F9F6F6 solid;
-	background-color:#F2F2F2;
+	background-color:#F2F2F2; */
 	padding: 0;
 }
 
@@ -107,7 +107,8 @@ form{
 }
 
 .posBto{
-	background-color:#CFDFEF;
+	/* background-color:#CFDFEF; */
+	background-color:#b9b6b6;
 	background-repeat: no-repeat;
 	font-size: 14px;
 	padding: 0;

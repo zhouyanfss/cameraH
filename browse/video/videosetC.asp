@@ -17,27 +17,23 @@
 <input type="hidden" id="Hi3518E" value='<%videoparaGet("hi3518e", "net");%>' />
 <input type="hidden" id="Hi3518EV200" value='<%videoparaGet("hi3518ev200", "net");%>' />
 <iframe id="hideFrame" name="hideFrame" style="display: none;"></iframe>
-	<!--
-	 <div class="listdiv" id="pNod0" onClick="showList(this.id);"><div><label>时间信息</label><img id="pNod0_img" src="../images/bit_up.gif"></div></div>
 
-	
-	<div id="pNod0_div" class="childdiv">
-    	<div>
-        	<label id="CameraDate" class="timeOn">&nbsp;</label>
-            <label id="CameraTime" class="timeOn">&nbsp;</label>
-        </div>
-        <div id="modeHank"></div>
+
+	<div style="display:none" class="listdiv" id="pNod1" onClick="showList(this.id);">
+		<div>
+			<label>视频操作</label>
+			<img id="pNod1_img" src="../images/bit_up.gif">
+		</div>
 	</div>
-	-->
-	<div class="listdiv" id="pNod1" onClick="showList(this.id);"><div><label>视频浏览</label><img id="pNod1_img" src="../images/bit_up.gif"></div></div>
 
 	
-  
-  <div id="pNod1_div" class="childdiv">
+
+  <div id="pNod1_div" class="childdiv" style="display:none">
 			<input type="hidden" name="resMax" id="resMax"   value="<%videoparaGet("resolution","net");%>" > 
 			<input type="hidden" name="resMin" id="resMin"   value="<%ExtVideoparaGet("resolution","net");%>" > 
 			<input type="hidden" name="resMjpeg" id="resMjpeg"  value="<%mjpegparaGet("resolution","net");%>" >
            <input type="hidden" name="colorMode" id="colorMode" value=' <%CameraGet("ColorMode","net");%>'/>
+
 		<div class="rowDiv">
 			<label class="videoSizeTest_cn1">视频类型</label>
 			<select name="BitSelect" id="BitSelect" class="videoSet_select" onChange="BitSet();">
@@ -46,7 +42,7 @@
 				<option value="2">MJPEG</option>
 			</select>
 		</div>
-		
+	
 		<div class="rowDiv">
 			<label class="videoSizeTest_cn1">视频大小</label>
 			<select name="videoSizeSelect" id="videoSizeSelect" class="videoSet_select" onChange="videoSizeSet();">
@@ -57,7 +53,6 @@
 			  <option value="4">完全</option>
 			</select>
 		</div>
-        
         <div class="rowDiv">
 			<label class="videoSizeTest_cn1">播放模式</label>
 			<select id="playModeSelect" class="videoSet_select" onChange="playMode();">
@@ -74,9 +69,17 @@
               <option value="2">冷色调</option>
 			</select>
 		</div>
-		
-		<div class="picDiv" style="display:none;">
-		
+		<div class="picDiv" style="">
+			<div class="unitDiv">
+				<div id="startZ"> 
+					<img name="startZP" id="startZP" onclick="startZoom();" src="../images/dzoom.gif" title="电子放大" >
+					<div class="imgMask"></div>			
+				</div>	
+				<div id="stopZ"  style="display:none;  position:relative;"> 
+					<img name="stopZP" id="stopZP" onclick="stopZoom();"  src="../images/dzoom_off.gif"  title="停止" >
+					<div class="imgMask"></div>	
+			  </div>
+			</div>
 			<div class="unitDiv">
 				<div id="h264Snap" onclick="setSnapShot();"> 
 					<img name="SnapShotSet" id="SnapShotSet" src="../images/snap.gif" title="快照" >			
@@ -92,8 +95,7 @@
 					<div class="imgMask"></div>			
 				</div>
 			</div>
-			
-			<div class="unitDiv" style="margin-left:20px;">
+			<div class="unitDiv" style="">
 				<div id="startR" style="position:relative;"> 
 					<img name="startP" id="startP" onclick="startRecord();" src="../images/record.gif" title="开始录像" >
 					<div class="imgMask"></div>			
@@ -104,7 +106,16 @@
 				</div>
 				
 			</div>
-
+			<div class="unitDiv">
+				<img name="in_on" id="in_on" onclick="AIn(0);" style="display:none"  src="../images/audio_in.gif"  title="关闭音频输入">
+				<img name="in_off" id="in_off"  onclick="AIn(1);"  src="../images/audio_in_off.gif"   title="开启音频输入">
+				<div class="imgMask"></div>	
+			</div>
+			<div class="unitDiv">
+					<img name="out_on" id="out_on" onclick="AOut(0);" style="display:none"  src="../images/audio_out.gif"  title="关闭音频输出">
+					<img name="out_off" id="out_off"   onclick="AOut(1);" src="../images/audio_out_off.gif" title="开启音频输出">
+					<div class="imgMask"></div>
+			</div>
 			<div class="unitDiv">
 				<div style="position:relative">
 					<img id="recordOpen" onclick="openVideoDir();" src="../images/path.gif" title="打开录像存储路径">
@@ -115,9 +126,6 @@
 		</div>
 		
 		  
-</div>
-
-
 </div>
   
 <!--        
@@ -167,9 +175,9 @@
 <div id="ptz" style="display:block;">
 
 <div class="listdiv" id="pNod3" onClick="showList(this.id);">
-    <div><label>PTZ控制</label><img src="../images/bit_down.gif"  id="pNod3_img"></div>
+    <label>云台控制</label>
 </div>
-<div id="pNod3_div" class="childdiv" align="center" style="display:none">
+<div id="pNod3_div" class="childdiv" align="center">
 	<div class="ptzDiv" align="center">
 	<form name="PTZForm" id="PTZForm" method="post" action="/form/setPTZCfg" target="hideframe" >
       <input id="focusSpeedGet" type="hidden" value="<%getPTZCfg("focusSpeed_", "net");%>" />
@@ -242,26 +250,21 @@
 	    </select>
       </div>
     </form>
-  </div>
-  
-</div>
-
-
-<div class="listdiv" id="pNod4" onClick="showList(this.id);"  style="display:block">
-    <div><label>云台功能</label><img src="../images/bit_down.gif"  id="pNod4_img"></div>
-</div>
-<div id="pNod4_div" class="childdiv" style="display:none">
+	
 	<form id="livePosHankForm" method="post" action="/form/presetSet" target="hideframe">
     	<input type="hidden" name="flag" id="jslivePresetFlag" />
         <input type="hidden" name="existFlag" id="jslivePresetExist" />
 		<input type="hidden" name="language" value="cn" />
-		<div class="rowDivY">
-			<div class="testDivBSD"><label>预置位</label></div>
-            <div class="buttonDivBSD"><input name="Input" type="button" value="调用"  onclick="callPst();"/></div>
+		<div class="rowDivY" style="width:100%;">
+			<div class="testDivBSD" style="padding-left:37px; padding-bottom:20px;padding-top:20px;">
+				<label style="float:left;">预置位</label>
+				<select name="presetNum" id="jsLivePresetNo" style="float:left; margin-left:30px;width:85px;" class="domSelectBSD" onchange="ajaxHankGet('/user/presetAjax','livePosHankForm','jsLivePresetNo');">
+				</select>
+			</div>
+            <div class="buttonDivBSD" style="padding-right:25px;"><input name="Input" type="button" value="调用"  onclick="callPst();"/></div>
             <div class="buttonDivBSD"><input name="Input" type="button" value="删除"  onclick="clearPst();"/></div>
             <div class="buttonDivBSD"><input name="Input" type="button" value="设置"  onclick="setPst();"/></div>
-			<select name="presetNum" id="jsLivePresetNo" class="domSelectBSD" onchange="ajaxHankGet('/user/presetAjax','livePosHankForm','jsLivePresetNo');">
-			</select> 
+			
 		</div>
     </form>
 
@@ -290,20 +293,28 @@
     	<input type="hidden" name="flag" id="jsliveTourFlag" />
         <input type="hidden" name="existFlag" id="jsliveTourExist" />
         <input type="hidden" name="presetValue" id="jsPresetValue" />
-		<div class="rowDivY">
-			<div class="testDivBSD"><label>巡视</label></div>
-            <div class="buttonDiv" style="margin-right:30px;"><input name="Input" type="button" class="ButtonSet" value="调用"  onclick="callTour();"/></div>
-			<select name="tourNum" id="jsliveTourNum" class="domSelectBSD" onchange="ajaxHankGet('/user/tourAjax','liveTourForm','jsliveTourNum')"></select> 
+		<div class="rowDivY" style="width:100%;">
+			<div class="testDivBSD" style="padding-left:37px;padding-bottom:20px;padding-top:20px;">
+			<label style="float:left;line-height:26px;">巡视</label>
+			<select name="tourNum" id="jsliveTourNum"  style="float:left; margin-left:10px;margin-top:3px;" class="domSelectBSD" onchange="ajaxHankGet('/user/tourAjax','liveTourForm','jsliveTourNum')">
+			</select> 
+            <div class="buttonDivBSD" style="margin-right:74px;"><input name="Input" type="button" value="调用"  onclick="callTour();"/>
+			</div>
+			</div>
 		</div>
     </form>
     <form name="YunTaiForm" id="jsYunTaiForm" method="post" action="/form/setSpecialFunc" target="hideframe">
         <div class="autoScan" align="center">
              <input type="hidden" name="flag" id="autoscanflag" value="0"/>
 			 <input type="hidden" name="command" id="jscommand" value="0"/>
-		     <input type="button" name="autoscan" class="scan" id="autoscan"  value="水平扫描" onclick="CallAtpPtn(2);"/>&nbsp;
+		     <input type="button" style="background-image:url(../images/scan_big.gif); width:100px;" name="autoscan" class="scan" id="autoscan"  value="水平扫描" onclick="CallAtpPtn(2);"/>&nbsp;
 		     <input type="button" name="flip" class="scan" id="jsflip"  style="display:none" value="花样扫描" onclick="CallAtpPtn(3);" />
 		</div>
 	</form>
+	
+
+</div>
+
 </div>
 
 

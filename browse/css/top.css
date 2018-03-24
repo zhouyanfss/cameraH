@@ -10,9 +10,9 @@ img {
 .topmenu {
 	position:relative;
 	width:100%; 
-	height:47px; 
+	height:62px; 
 	margin:0 auto;
-	background-color:#CFDFEF;
+	background-color:#cfcece;
 	min-width:900px;
 }
 
@@ -20,17 +20,23 @@ img {
 	position:relative;
 	height:70px;
 	min-width:900px;  
-	background:url(../images/top_bg.gif); 
+	background:url(../images/nvr/top_bg.gif); 
 }
 
 .logoPic{
 	position:absolute;
-	top:0px;
-	left:0px;
+	top:5px;
+	left:40px;
 	z-index:0;
-	background:url(../images/hkvision_IR_camera.gif) no-repeat;
-	height:70px;
-	width:920px;
+	background:url(../images/logo.png) no-repeat 0px 5px;
+	height:65px; */
+	height:47px;
+	width:180px;
+	line-height:47px;
+	font-size:36px;
+	font-weight:bold;
+	color:#434343;
+	font-style:oblique;
 }
 .logoPic_e{
 	position:absolute;
@@ -62,20 +68,19 @@ img {
 .topmenu select{
 	position:absolute;
 	right:20px;
-	top:5px;
+	top:35px;
 	width:100px; 
 
 }
 
 .topmenu ul {
 	position:absolute;
-	left:0px;
-	top:0px; 
+	left:259px;
+	top:15px; 
 	list-style: none; 
 	margin: 0px; 
 	padding: 0px;
 	height:47px;
-	width:425px;
 	z-index:3;
 }
 .topmenu ul li { 
@@ -89,14 +94,16 @@ img {
 	list-style: none;
 	float: left;
 	font-weight:bold;
-	font-size: 18px;
+	font-size: 24px;
+	font-family:黑体;
 	cursor: pointer;
-	background-image:url(../images/topbutton0.gif);
 	color:#000000;
-	letter-spacing:2px;
-	background-repeat:no-repeat;
+	letter-spacing:5px;
+	background:url(../images/topbutton0.gif) no-repeat;
 }
-
+.topmenu ul li.selected{
+	background:url(../images/topbutton1.gif) no-repeat;
+}
 
 /**************old code belowe***************************/
 .header{
@@ -122,10 +129,11 @@ img {
 	font-size:12px;
 	font-weight:bolder;
 }
+
 /*20130106 add buttons*/
 .selectButton{
 	position:absolute;
-	top:0px;
+	top:20px;
 	height:47px;
 	right:150px;
 	width:282px;
@@ -177,6 +185,5 @@ img {
 	right:141px;
 	width:47px; 
 }
-
 
 
