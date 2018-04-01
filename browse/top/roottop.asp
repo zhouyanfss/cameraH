@@ -116,6 +116,6 @@
 </div>
 -->
 </div>
-<div style="height:5px; background-color:#aaaaaa; display:block;width:100%;position:relative; min-width:900px;"></div>
+<div style="height:5px; background-color:#888888; display:block;width:100%;position:relative; min-width:900px;"></div>
 </body>
 </html>

@@ -33,21 +33,21 @@ document.oncontextmenu=Click;
 <input type="hidden" name="videoType" id="videoType" value='<%IVPathGet("videoType","net");%>'/>
 <input type="hidden" name="audioType" id="audioType" value='<%audioparaGet("AudioFormat","net");%>' />
 
-<div style="height:30px; display:block; margin:auto;width:100%;background-color:#c9c6c6; border-top:2px solid #999999;">
+<div style="height:30px; display:block; margin:auto;width:100%;background-color:#c9c6c6; border-top:2px solid #888888;">
 	   
 	<div id="videoBottom" style="height:30px; display:block; margin:auto; position:relative;">
-		<div class="btnArea" style="background:url(../images/bfms.png) no-repeat 0px 5px;">
+		<div class="btnArea"  title="视频类型"  _title="Stream type"  style="background:url(../images/bfms.png) no-repeat 0px 5px;">
 			<div class="selectArea">
 				<select name="BitSelect" id="BitSelect" style="height:50px; width:80px;" onChange="vedioParaChange('BitSelect');" class="videoSet_select" multiple="multiple" size="3">
 					<option value="0" _enlan="Main stream">主码流</option>
 					<option value="1" _enlan="Sub stream">副码流</option>
-					<option value="2" _enlan="MJPEG">MJPEG</option>
+					<option value="2" _enlan="MJPEG" selected>MJPEG</option>
 				</select>
 				<iframe id="iframe1" src="about:blank" frameBorder="0" marginHeight="0" marginWidth="0" style="position:absolute; visibility:inherit; top:0px;left:0px;width:80px; height:50px;z-index:-1; filter:alpha(opacity=0);"></iframe>
 
 			</div>
 		</div>
-		<div class="btnArea" style="background:url(../images/spdx.png) no-repeat 0px 5px; ">
+		<div class="btnArea" title="视频大小" _title="Video size" style="background:url(../images/spdx.png) no-repeat 0px 5px; ">
 			<div class="selectArea">
 				<select name="videoSizeSelect" id="videoSizeSelect" style="height:90px; width:60px;"  class="videoSet_select" onChange="vedioParaChange('videoSizeSelect');" multiple="multiple" size="5">
 				  <option value="0">1 x</option>
@@ -60,9 +60,9 @@ document.oncontextmenu=Click;
 
 			</div>
 		</div>
-		<div class="btnArea" style="background:url(../images/splx.png) no-repeat 0px 5px;">
+		<div class="btnArea" title="播放模式"  _title="Play mode" style="background:url(../images/splx.png) no-repeat 0px 5px;">
 			<div  class="selectArea">
-				<select id="playModeSelect" class="videoSet_select"  style="height:34px; width:60px;" onChange="vedioParaChange('playModeSelect');" multiple="multiple" size="2">
+				<select  id="playModeSelect" class="videoSet_select" disabled="disabled"  style="height:34px; width:60px;" onChange="vedioParaChange('playModeSelect');" multiple="multiple" size="2">
 				  <option value="0" _enlan="Live">实时</option>
 				  <option value="1" _enlan="Smooth">流畅</option>
 				</select>
@@ -70,7 +70,7 @@ document.oncontextmenu=Click;
 
 			</div>
 		</div>
-		<div class="btnArea" style="background:url(../images/txsc.png) no-repeat 0px 5px;">
+		<div class="btnArea" title="图像色彩"  _title="Color mode"  style="background:url(../images/txsc.png) no-repeat 0px 5px;">
 			<div class="selectArea">
 				<select name="videoColorSelect" id="videoColorSelect" style="height:50px; width:60px;" class="videoSet_select" onChange="vedioParaChange('videoColorSelect');" multiple="multiple" size="3">
 				  <option value="0" _enlan="Fresh">鲜艳</option>

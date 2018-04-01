@@ -37,7 +37,7 @@
 		<div class="rowDiv">
 			<label class="videoSizeTest_cn1">视频类型</label>
 			<select name="BitSelect" id="BitSelect" class="videoSet_select" onChange="BitSet();">
-				<option value="0">主码流</option>
+				<option value="0" selected="selected">主码流</option>
 				<option value="1">副码流</option>
 				<option value="2">MJPEG</option>
 			</select>
@@ -56,7 +56,7 @@
         <div class="rowDiv">
 			<label class="videoSizeTest_cn1">播放模式</label>
 			<select id="playModeSelect" class="videoSet_select" onChange="playMode();">
-			  <option value="0">实时</option>
+			  <option value="0" selected="selected" >实时</option>
 			  <option value="1">流畅</option>
 			</select>
 		</div>
@@ -65,7 +65,7 @@
 			<label class="videoSizeTest_cn1">图像色彩</label>
 			<select name="videoColorSelect" id="videoColorSelect" class="videoSet_select" onChange="colorMode();">
 			  <option value="0">鲜艳</option>
-			  <option value="1">标准</option>
+			  <option value="1" selected="selected" >标准</option>
               <option value="2">冷色调</option>
 			</select>
 		</div>

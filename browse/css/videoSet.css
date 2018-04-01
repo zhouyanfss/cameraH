@@ -47,9 +47,10 @@ form{
 /*********************en********************************/
 .listdiven { 
 	display: block;
-	width: 260px; 
+	/* width: 260px;  */
 	height:42px; 
-	background-color:#d9d6d6;
+	text-align:center;
+	background-color:#b9b6b6;
 	border-top:1px solid #a9a6a6;
 	border-bottom:1px solid #a9a6a6;
 	overflow:hidden;
@@ -261,7 +262,7 @@ form{
 }
 .ptzRow{
  	width:170px;
-	margin-top:5px;
+	margin-top:10px;
 }
 .ptzRow_en{
  	width:156px;
@@ -289,7 +290,7 @@ form{
 
 .picRow{
 	width:156px;
-	height:45px;
+	height:50px;
 }
 
 .picRowLeft{

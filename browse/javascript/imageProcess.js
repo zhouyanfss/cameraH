@@ -9,9 +9,20 @@ var constBottomHeight = 32;
 
 function initLan()
 {
-	if(lang.toLowerCase()!="zh-cn")
+	var Language = 1;
+	try{
+		if(parent.parent.topFrame.lanSelect.value == '0'){
+		  Language = 0;
+		}else{
+		  Language = 1;
+		}
+	}catch(e){
+	    
+	}
+	//if(lang.toLowerCase()!="zh-cn")
+	if(Language==0)
 	{
-		$(".selectButton img").each(function(){
+		$(".selectButton img,.btnArea").each(function(){
 			if($(this).attr("_title"))
 			{
 				$(this).attr("title",$(this).attr("_title"))

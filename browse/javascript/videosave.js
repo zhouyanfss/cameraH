@@ -507,7 +507,8 @@ function videoSizeSet()
 			h264VideoSizeSet();
 			break;
 		case '1':	
-			minWH();
+			//minWH();
+			maxWH();
 			h264VideoSizeSet();
 			break;
 		case '2':
@@ -550,10 +551,42 @@ function funGoMJPEGC()
 	else
 		Am_goMJPEGC();			
 }
-function mainframeload()
+
+
+var reWritBitSelectTimes = 0;
+function mainframeload(bitSelectVal)
 {
 	var dataObj = new Date();
-	parent.mainFrame.videomainFrame.document.location.replace("/browse/video/video.asp" + "?_=" + dataObj.getTime());
+	var url ="/browse/video/video.asp" + "?_=" + dataObj.getTime();
+	//parent.mainFrame.videomainFrame.document.location.replace("/browse/video/video.asp" + "?_=" + dataObj.getTime());
+	// if(bitSelectVal>=0)
+	// {
+		// url +="&bsv="+ bitSelectVal;
+	// }
+	parent.mainFrame.videomainFrame.document.location.replace(url);
+	// if(bitSelectVal>=0)
+		// parent.mainFrame.videomainFrame.document.getElementById("BitSelect").selectedIndex = bitSelectVal;
+	 reWritBitSelectTimes = 0;
+	 reWriteBitSelect(bitSelectVal);
+
+}
+
+function reWriteBitSelect(bitSelectVal){
+	if(parent.mainFrame.videomainFrame.document.getElementById("BitSelect")&&reWritBitSelectTimes>=1)
+	{
+		parent.mainFrame.videomainFrame.document.getElementById("BitSelect").selectedIndex = bitSelectVal;
+		if(reWritBitSelectTimes < 5)
+		{
+		   setTimeout(function(){reWriteBitSelect(bitSelectVal);},500)
+		}
+	}
+	else if(reWritBitSelectTimes < 50){
+		reWritBitSelectTimes++;
+		setTimeout(function(){reWriteBitSelect(bitSelectVal);},500)
+	}
+	else{
+		alert("网速太慢啦");
+	}
 }
 
 
@@ -566,12 +599,12 @@ function BitSet()
 		case "0"://major
 			H264Style();
 			addplayercookie("player","hkvisionMax");
-			mainframeload();
+			mainframeload(0);
 			break;
 		case "1"://minor
 			H264Style();
 			addplayercookie("player","hkvisionMin");
-			mainframeload();
+			mainframeload(1);
 			break;
 		case "2"://mjpeg
 			MjpegStyle();
