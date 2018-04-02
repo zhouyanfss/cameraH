@@ -34,6 +34,7 @@ document.oncontextmenu=Click;
 <input type="hidden" name="audioType" id="audioType" value='<%audioparaGet("AudioFormat","net");%>' />
 
 <div id="bottomArea" style="height:30px; display:block; margin:auto;width:100%;background-color:#c9c6c6; border-top:2px solid #888888;">
+<div style="height:30px; display:block; margin:auto;width:100%;background-color:#c9c6c6; border-top:2px solid #888888;">
 	   
 	<div id="videoBottom" style="height:30px; display:block; margin:auto; position:relative;">
 		<div class="btnArea"  title="视频类型"  _title="Stream type"  style="background:url(../images/bfms.png) no-repeat 0px 5px;">
