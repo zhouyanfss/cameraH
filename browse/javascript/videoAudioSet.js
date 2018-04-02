@@ -34,7 +34,7 @@ function window_resize(){
 	else
 	{
 		$(".topMenu:first").css({"position":"fixed","z-index":"2"});
-		$(".videoWindow:first").css({"position":"fixed","z-index":"1"});
+		//$(".videoWindow:first").css({"position":"fixed","z-index":"1"});
 	}
 }
 
