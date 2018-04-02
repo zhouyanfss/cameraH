@@ -55,8 +55,12 @@ body{
         <div id="modeHank"></div>
 	</div>
 	-->
-	<div style="display:none"  class="listdiven" id="pNod1" onClick="showList(this.id);"><div><label>View</label><img id="pNod1_img" src="../images/bit_up.gif"></div></div>
-
+	<div style="display:none"  class="listdiven" id="pNod1" onClick="showList(this.id);">
+		<div>
+			<label>View</label>
+			<img id="pNod1_img" src="../images/bit_up.gif">
+		</div>
+	</div>
 	
   
 <div id="pNod1_div" class="childdiv" style="display:none">

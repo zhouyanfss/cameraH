@@ -99,10 +99,12 @@ img {
 	cursor: pointer;
 	color:#000000;
 	letter-spacing:5px;
-	background:url(../images/topbutton0.gif) no-repeat;
+	/* background:url(../images/topbutton0.gif) no-repeat; */
 }
 .topmenu ul li.selected{
-	background:url(../images/topbutton1.gif) no-repeat;
+	/* background:url(../images/topbutton1.gif) no-repeat; */
+	background-color:#505050;
+	color:white;
 }
 
 /**************old code belowe***************************/

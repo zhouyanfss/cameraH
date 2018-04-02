@@ -8,18 +8,38 @@ var resFlag = true;//主要是考虑到播放器的长和宽还没有根据video
 
 $(document).ready(function(){
 	
-	$(".btnArea").hover(function(){
-		//$(".btnArea").not($(this)).children("div").hide();
-		//var eleChild = $(this).children("div");
+	 // $(".btnArea").hover(function(){
+		 // //$(".btnArea").not($(this)).children("div").hide();
+		 // //var eleChild = $(this).children("div");
+
+		 // $(this).attr("title",$(this).find("select option:selected").text());
+	 // },function(){
 		
-		$(this).children("div").show();
-	},function(){
+		 // //$(this).children("div").hide();
+	 // });
+	
+	$(".btnArea").click(function(e){
+		e.stopPropagation();  
 		
-		$(this).children("div").hide();
+		if($(this).children("div").is(":visible"))
+		{			
+			$(this).children("div").hide();
+		}
+		else
+		{
+			$(".btnArea").children("div").hide();
+			$(this).children("div").show();
+		}
 	});
 	
-	
-	$(".unitDiv,.btnArea").hover(function(){
+	$(document).click(function(){
+        jQuery(".btnArea").children("div").hide();
+		
+    });
+
+	//$(".unitDiv,.btnArea").hover(function(){
+		
+	$(".unitDiv").hover(function(){
 		$(this).css({
 			"border":"1px solid #1c1c1c",
 			"padding":"1px",
@@ -35,6 +55,7 @@ $(document).ready(function(){
 
 function vedioParaChange(btnid)
 {
+	//$("#"+btnid).parents(".btnArea").attr("title",$("#"+btnid).find("option:selected").text());
 	top.rightFrame.document.getElementById(btnid).value = document.getElementById(btnid).value;
 	top.rightFrame.document.getElementById(btnid).onchange();
 }

@@ -108,7 +108,7 @@ function HankP(){
 		else
 			$("#text_lan").html("<h3><br>click here<a href='https://1drv.ms/u/s!AvEAxOp0F01Ua3MNUvLCVJeDyf0' target='_blank' onclick='loadexe()'><font size='5'>download control</font></a>.After install the control, <a href='#' onclick='window.location.reload();'><font size='5'>refresh the page</font></a> please.</h3>");
 		
-		$(".selectButton img").each(function(){
+		$(".selectButton img,.btnArea").each(function(){
 			if($(this).attr("_title"))
 			{
 				$(this).attr("title",$(this).attr("_title"))
@@ -235,13 +235,13 @@ function ocx_update_confirm(){
 	<script type="text/javascript" language="javascript" src="../javascript/browseEm.js"></script>
     <!--<div align="center" id="Player" style="background-color:#3CC"></div>-->
 </div>
-<div style="height:30px; display:block; margin:auto;width:100%;background-color:#c9c6c6; border-top:2px solid #999999;">
+<div id="bottomArea" style="height:30px; display:block; margin:auto;width:100%;background-color:#c9c6c6; border-top:2px solid #888888;">
 	   
 	<div id="videoBottom" style="height:30px; display:block; margin:auto; position:relative;">
-		<div class="btnArea" style="background:url(../images/bfms.png) no-repeat 0px 5px;">
+		<div class="btnArea" title="视频类型" _title="Stream type" style="background:url(../images/bfms.png) no-repeat 0px 5px;">
 			<div class="selectArea">
 				<select name="BitSelect" id="BitSelect" style="height:50px; width:80px;" onChange="vedioParaChange('BitSelect');" class="videoSet_select" multiple="multiple" size="3">
-					<option value="0" _enlan="Main stream">主码流</option>
+					<option value="0" _enlan="Main stream" selected="selected" >主码流</option>
 					<option value="1" _enlan="Sub stream">副码流</option>
 					<option value="2" _enlan="MJPEG">MJPEG</option>
 				</select>
@@ -249,7 +249,7 @@ function ocx_update_confirm(){
 
 			</div>
 		</div>
-		<div class="btnArea" style="background:url(../images/spdx.png) no-repeat 0px 5px; ">
+		<div class="btnArea" title="视频大小" _title="Video size" style="background:url(../images/spdx.png) no-repeat 0px 5px; ">
 			<div class="selectArea">
 				<select name="videoSizeSelect" id="videoSizeSelect" style="height:90px; width:60px;"  class="videoSet_select" onChange="vedioParaChange('videoSizeSelect');" multiple="multiple" size="5">
 				  <option value="0">1 x</option>
@@ -262,21 +262,21 @@ function ocx_update_confirm(){
 
 			</div>
 		</div>
-		<div class="btnArea" style="background:url(../images/splx.png) no-repeat 0px 5px;">
+		<div class="btnArea" title="播放模式" _title="Play mode" style="background:url(../images/splx.png) no-repeat 0px 5px;">
 			<div  class="selectArea">
 				<select id="playModeSelect" class="videoSet_select"  style="height:34px; width:60px;" onChange="vedioParaChange('playModeSelect');" multiple="multiple" size="2">
-				  <option value="0" _enlan="Live">实时</option>
+				  <option value="0" _enlan="Live" selected="selected" >实时</option>
 				  <option value="1" _enlan="Smooth">流畅</option>
 				</select>
 				<iframe id="iframe1" src="about:blank" frameBorder="0" marginHeight="0" marginWidth="0" style="position:absolute; visibility:inherit; top:0px;left:0px;width:60px; height:34px;z-index:-1; filter:alpha(opacity=0);"></iframe>
 
 			</div>
 		</div>
-		<div class="btnArea" style="background:url(../images/txsc.png) no-repeat 0px 5px;">
+		<div class="btnArea" title="图像色彩"  _title="Color mode"  style="background:url(../images/txsc.png) no-repeat 0px 5px;">
 			<div class="selectArea">
 				<select name="videoColorSelect" id="videoColorSelect" style="height:50px; width:60px;" class="videoSet_select" onChange="vedioParaChange('videoColorSelect');" multiple="multiple" size="3">
 				  <option value="0" _enlan="Fresh">鲜艳</option>
-				  <option value="1" _enlan="Standard">标准</option>
+				  <option value="1" _enlan="Standard" selected="selected">标准</option>
 				  <option value="2" _enlan="Cold">冷色调</option>
 				</select>
 				<iframe id="iframe1" src="about:blank" frameBorder="0" marginHeight="0" marginWidth="0" style="position:absolute; visibility:inherit; top:0px;left:0px;width:60px; height:50px;z-index:-1; filter:alpha(opacity=0);"></iframe>
