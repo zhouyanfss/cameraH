@@ -33,7 +33,7 @@ function loadexe()
 
 function reload()
 {
-	document.hideframe.location.href='index.asp';	
+	document.hideframe.location.href='main.asp';	
 }
 
 function loadAtten(){
