@@ -586,6 +586,7 @@ function reWriteBitSelect(bitSelectVal){
 		{
 		   setTimeout(function(){reWriteBitSelect(bitSelectVal);},500)
 		}
+		reWritBitSelectTimes++;
 	}
 	else if(reWritBitSelectTimes < 50){
 		reWritBitSelectTimes++;

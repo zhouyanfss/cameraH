@@ -34,7 +34,7 @@
 			 
 			</ul>
 			</form>
-			<ul style="display:none;">
+			<!--<ul >
 			  <li class="titlelog" id="lilanguage" style="display: none"></li>
 			  <li class="tvalue mainpagelanguage">
 			  		<select name="languagechoose" class="select" id="languagechoose" onChange="lanChange()" style="width:90px; min-width:80px;">
@@ -43,7 +43,7 @@
 					</select>  
 			  </li>
 			</ul>
-			<!--div class="lg_con_in">
+			<div class="lg_con_in">
 			  <div class="lg_con_in_1"><a id="b_login" href="javascript:loginweb();"></a>
 			  <a id="b_cancel_l"  href="javascript:window.close();"></a></div>
 			</div-->
@@ -62,7 +62,7 @@
 			<div class="lg_con_in">
 			  <div class="lg_con_in_1"><a id="b_login" href="javascript:;"  onclick="loginweb();">登录</a><a id="b_cancel_l" href="javascript:;"  onclick="javascript:window.close();">取消</a></div>
 			</div>		
-			<div id="liOCX" onclick="activeX_down();"></div>					     
+			<div id="liOCX" _t="123" onclick="activeX_down();"></div>					     
 		</div> 
 	</div>
   </div>

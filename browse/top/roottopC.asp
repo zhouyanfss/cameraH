@@ -33,8 +33,8 @@
 	</div>
 	<ul>
 		<li id="li0" class="selected" onclick="realScan('videosetC.asp');" >预览</li>
-		<li id="li1" onclick="set('rootleftsetC.htm','sysInfC.asp');">设置</li>
 		<li id="li2" onclick="replay('playbackC.asp');">回放</li>
+		<li id="li1" onclick="set('rootleftsetC.htm','sysInfC.asp');">设置</li>
 	</ul>	
     <select name="lanSelect" id="lanSelect" onchange="lanChange();">
 		<option value="0">English</option>

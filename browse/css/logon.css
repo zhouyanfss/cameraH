@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+html{background-color:#aaaaaa;height:100%;}
+body,dl,dt,dd,ul,ol,li,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;font-weight:400;}
+h1,h2,h3,h4,h4,h5{margin:0;padding:0;}
+body{padding:0; font-family: Arial, Helvetica, sans-serif,"微软雅黑"; font-size:14px;color:#69c7a3;margin:0; padding:0; width:100%;height:100%;}
+
+div{margin-left:auto;margin-right:auto;}
+select{font-size:14px;}
+table{border-collapse:collapse;}
+fieldset,img{border:0;}
+hr{clear:both;margin:5px 0;*margin:0;border-width:0;border-top:1px solid #c5c5c5;border-bottom:1px solid #FFF;height:2px;overflow:hidden;}
+ol,ul{list-style:none;}
+a{cursor:pointer;outline:none;text-decoration:none;}
+a:link,a:visited{color:white}
+a:hover {color:#FFBF37;}
+/*登录样式*/
+#lg_out {left:0px;width:100%;height:100%;position:absolute; background:#aaaaaa; _height:400px;}
+#login{ width:100%; position: absolute; top:25%; left:0; _top:120px;}
+#lg{ background:url(../images/lgbg.gif) no-repeat; width:953px; height:300px;padding-top:153px;}
+.logo{ width:474px; height:56px;}
+.logincon{ width:650px; margin-left:300px;}
+.titlelog{ float:left; width:167px; height:30px; text-align:right;margin-bottom:10px; color:#000; font-weight:bold;  line-height:30px; font-size:12px;}
+.tvalue{ float:left;  height:27px; padding-top:3px; padding-left:60px;}
+.logincon ul{ width:484px; clear:both; height:30px; margin-bottom:10px;}
+.logincon ul input {font-size:12px; height: 18px; border: 1px solid #7a7a7a; margin: 0px; background:#e0e0e0; padding-top:4px;width:190px;}
+.lg_con_in{ width:640px; height:30px; clear:both; padding-top:10px;}
+.lg_con_in_1{width:180px; height:26px; text-align:center;}
+.lg_con_in_1 a{float:left; width:77px; height:26px; background:url(../images/btn1.png) no-repeat; display:block; line-height:26px; margin:0 6px; color:#000; font-size:12px; text-decoration:none; display:inline;}
+.lg_con_in_1 a:hover{ background-position: 0 -26px;}
+#liOCX{width:474px;height:30px;clear:both;padding-top:32px;color:#222; cursor:pointer; font-size:14px;margin-top:100px; color:#0000FF;font-weight:bold;}
+#rem_check{margin-left:14px;margin-top:-9px;background:url("../images/check.png") no-repeat;}
+.div_check{float: left;width: 36px;height: 36px;margin-top: 5px;}
+.check{margin-top:70px;margin-left:1px;height:60px;font-size:24px;color:white;}
+.div_logon{width: 317px;height: 54px;margin-top: -4px;margin-left:15px;text-align: center;}
+.div_logon:hover{background:url("../images/logo_back.png")}
+.div_logon label{font-size: 40px;color: white;}
+.logon_close{width:39px;height: 39px;margin-top:-450px;margin-right: 40px;background:url("../images/close.png") no-repeat}
+/*.logon_close:hover{background:url("../images/close_hover.png") no-repeat}*/
+.logon_close:hover{transition:border linear .2s,box-shadow linear .5s;
+-moz-transition:border linear .2s,-moz-box-shadow linear .5s;
+-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+outline:none;border-color:rgba(255,0,0,0.5);
+box-shadow:0 0 15px rgba(255,0,0,0.5);
+-moz-box-shadow:0 0 15px rgba(255,0,0,0.5);
+-webkit-box-shadow:0 0 15px rgba(255,0,0,0.5);
+}
