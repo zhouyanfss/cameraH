@@ -1,7 +1,6 @@
 @charset "utf-8";
 html{
 	overflow:scroll;
-	background-color:#F9F6F6;
 }
 
 body{
@@ -14,7 +13,6 @@ body{
 	width: 99%;
 	min-width: 750px;
 	height: 28px;
-	background-color:#999;
 	overflow:hidden;
 	margin-left: 1px;
 }
@@ -50,7 +48,7 @@ body{
 }
 
 .hankName{
-	background-color:#e9e6e6;
+	background-color:#a4c4ff;
 	min-width: 750px;
 	height: 25px;
 	padding: 0;
@@ -163,7 +161,7 @@ body{
 .SDbto{
 	float:left;
 	display:inline-block;
-	background-color:#b9b6b6;
+	background-color:#6197fe;
 	height: 30px;
 	width: 81px; 
 	background-repeat: no-repeat;

@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Login</title>
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
 <link rel="stylesheet" type="text/css" href="../css/top.css" />
 <script language="javascript" src="../javascript/jquery.js"></script>
 <script language="javascript" src="../javascript/cookie.js"></script>
@@ -120,6 +121,6 @@
 </div>
 -->
 </div>
-<div style="height:5px; background-color:#888888; display:block;width:100%;position:relative; min-width:900px;"></div>
+<div id="divTopBottomLine"></div>
 </body>
 </html>

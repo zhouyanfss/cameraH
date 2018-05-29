@@ -32,8 +32,8 @@
 	</div>
 	<ul>
 		<li id="li0" onclick="realScan('videoset.asp');" class="selected"  style="letter-spacing:0px; font-family:Arial, Helvetica, sans-serif">Browse</li>
-		<li id="li1" onclick="set('rootleftset.htm','sysInf.asp');" style="letter-spacing:0px; font-family:Arial, Helvetica, sans-serif">Setting</li>
 		<li id="li2" onclick="replay('playback.asp');" style="letter-spacing:0px; font-family:Arial, Helvetica, sans-serif">Playback</li>
+		<li id="li1" onclick="set('rootleftset.htm','sysInf.asp');" style="letter-spacing:0px; font-family:Arial, Helvetica, sans-serif">Setting</li>
 	</ul>
     <select name="lanSelect" id="lanSelect" onchange="lanChange();">
 		<option value="0" selected="selected">English</option>
@@ -116,6 +116,6 @@
 </div>
 -->
 </div>
-<div style="height:5px; background-color:#888888; display:block;width:100%;position:relative; min-width:900px;"></div>
+<div id="divTopBottomLine"></div>
 </body>
 </html>

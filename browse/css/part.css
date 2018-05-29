@@ -1,12 +1,10 @@
 html{
-	background-color:#F9F6F6; 
 	overflow:scroll; /*隐藏水平滚动条*/
 }
 
 body{
 	font-size: 14px;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	background-color:#F9F6F6;
 	margin:0;
 }
 
@@ -61,7 +59,7 @@ IMG {
     border:#C8C8C8 solid;   
 	border-width:1px 0px 0px 1px; 
 	/*background: #F6F6F6;*/
-	background: #e9e6e6;
+	
 	margin-top:25px;
 	   
 }
@@ -187,7 +185,7 @@ font{
 }
 
 .ButtonSet{
-	background-color:#b9b6b6;
+	background-color:#6197fe;
 	font-size:14px;
 	padding: 0;
 	border: 0;	
@@ -197,7 +195,7 @@ font{
 	margin-top:5px;
 }
 .alarmName{
-	background-color:#e9e6e6;
+	background-color:#a4c4ff;
 	min-width: 660px;
 	height: 25px;
 	padding: 0;

@@ -212,7 +212,7 @@ function ocx_update_confirm(){
 }
 </script>
 </head>
-<body ondrag="return false" onload="set_height_width();loadAtten();HankP();compare_version();" style="margin:0;padding:0;background-color:#aaaaaa; ">
+<body ondrag="return false" onload="set_height_width();loadAtten();HankP();compare_version();" style="margin:0;padding:0;">
 <input type="hidden" id="HAS_IPC_AX" value='<%SystemInfoGet("has_IPC_AX", "net");%>' />
 <input type="hidden" id="Hi3516A" value='<%videoparaGet("hi3516a", "net");%>' />
 <input type="hidden" id="Hi3519" value='<%videoparaGet("hi3519", "net");%>' />
@@ -231,11 +231,11 @@ function ocx_update_confirm(){
 	<div id="chrome_text"></div>
 	<div id="text_lan" style="color:red;"></div>
 </div>
-<div align="center" id="mpg4Ocx" style=" background-color:#c9c6c6; position:relative;z-index:-1;">
+<div align="center" id="mpg4Ocx" style=" position:relative;z-index:-1;">
 	<script type="text/javascript" language="javascript" src="../javascript/browseEm.js"></script>
     <!--<div align="center" id="Player" style="background-color:#3CC"></div>-->
 </div>
-<div id="bottomArea" style="height:30px; display:block; margin:auto;width:100%;background-color:#c9c6c6; border-top:2px solid #888888;">
+<div id="bottomArea" style="height:30px; display:block; margin:auto;width:100%; border-top:2px solid #6197fe;">
 	   
 	<div id="videoBottom" style="height:30px; display:block; margin:auto; position:relative;">
 		<div class="btnArea" title="视频类型" _title="Stream type" style="background:url(../images/bfms.png) no-repeat 0px 5px;">

@@ -1,7 +1,6 @@
 ﻿@charset "utf-8";
 html{
 	overflow:scroll;
-	background-color:#F9F6F6;
 }
 
 body{
@@ -23,7 +22,7 @@ form{
 	margin-bottom: 1px;
 	margin-left: 1px;
 	
-	background-color:#999;
+	background-color:#a4c4ff;
 }
 
 .topMenu ul{
@@ -108,7 +107,7 @@ form{
 
 .posBto{
 	/* background-color:#CFDFEF; */
-	background-color:#b9b6b6;
+	background-color:#6197fe;
 	background-repeat: no-repeat;
 	font-size: 14px;
 	padding: 0;

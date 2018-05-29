@@ -1,6 +1,6 @@
 var iframeFun = function(){};
 var LANGUAGE = 0;//页面语言,0：英文；1：中文
-var COLOR = "#e9e6e6";
+var COLOR = "#d6e8ff";
 /*********首栏切换******************/
 function sysShow(className,num){
 	var hankType = $("."+className);

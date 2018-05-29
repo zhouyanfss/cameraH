@@ -52,7 +52,7 @@ window.onload=function(){
        		<div class="OSDstate">
 				<div id="intel_line_num" style="color:red;"></div>
    	        	<div class="OSDXYlabel">
-					<input type="button" class="ButtonRight" style="height: 25px;font-size: 12px" value="人数清零" onclick="Line_ClearNum()" />
+					<input type="button" class="ButtonRight" style="height: 25px;font-size: 12px;margin-bottom:2px;" value="人数清零" onclick="Line_ClearNum()" />
 					<input type="button" class="ButtonRight" style="height: 25px;font-size: 12px" value="串口发送" onclick="Line_SendNum()" />
 				</div>
 			</div>

@@ -8,7 +8,7 @@
 html,body {
 	margin:0;
 	padding:0;
-	background-color:#888888;
+	background-color:#6197fe;
 	height:100%;
 }
 

@@ -1,7 +1,6 @@
 
 html{
 	overflow:scroll;
-	background-color:#F9F6F6;
 }
 
 body{
@@ -11,12 +10,16 @@ body{
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
+input[type=button]{
+	background-color:#6197fe;
+}
+
 .topMenu{
 	height: 30px;
 /*	border-bottom: #BBB 1px solid;
 	margin-bottom: 1px;*/
 	margin-left: 1px; 
-	background-color:#999;
+	background-color:#a4c4ff;
 }
 
 .topMenu ul{
@@ -56,7 +59,7 @@ body{
 
 .hankName{
 	/* background-color:#CFDFEF; */
-	background-color:#e9e6e6;
+	background-color:#d6e8ff;
 	min-width: 830px;
 	height: 25px;
 	padding: 0;
@@ -249,7 +252,6 @@ body{
 
 .ButtonLeft{
 	/* background-color:#CFDFEF; */
-	background-color:#b9b6b6;
 	background-repeat: no-repeat;
 	font-size:14px;
 	padding: 0;
@@ -263,7 +265,6 @@ body{
 
 .ButtonRight{
 	/* background-color:#CFDFEF; */
-	background-color:#b9b6b6;
 	background-repeat: no-repeat;
 	font-size: 14px;
 	padding: 0;
@@ -320,7 +321,6 @@ body{
 
 .ButtonOnly{
 	/* background-color:#CFDFEF; */
-	background-color:#b9b6b6;
 	background-repeat: no-repeat;
 	font-size:14px;
 	padding: 0;

@@ -14,7 +14,6 @@ body{
 	margin-left:0px;
 	_margin-right:-3px;
 	margin-top:0px;
-	background-color:#c9c6c6;
 	/* width:200px; */
 	padding:0;
 	}
@@ -35,10 +34,9 @@ form{
 	line-height:42px;
 	text-align:center;
 	/* background: url(../images/bar_0.gif) no-repeat;  */
-	background-color:#b9b6b6;
 	overflow:hidden;
-	border-top:1px solid #999999;
-	border-bottom:1px solid #999999;
+	border-top:1px solid #6197fe;
+	border-bottom:1px solid #6197fe;
 	font-weight: bold;
 	letter-spacing:4px;
 	font-size:16px;
@@ -50,9 +48,8 @@ form{
 	/* width: 260px;  */
 	height:42px; 
 	text-align:center;
-	background-color:#b9b6b6;
-	border-top:1px solid #a9a6a6;
-	border-bottom:1px solid #a9a6a6;
+	border-top:1px solid #6197fe;
+	border-bottom:1px solid #6197fe;
 	overflow:hidden;
 	}
 
@@ -112,7 +109,7 @@ form{
 	/*background-color:#CFDFEF;*/
 }
 .buttonDivBSD input{	
-	background-color:#b9b6b6;
+	background-color:#6198ff;
 	width:44px;
 }
 
@@ -233,16 +230,15 @@ form{
 	color:#000000; 
 	list-style-type:none; 
 	/*background-image:url(../images/bar_0.gif); */
-	background-color:#ccc;
 	letter-spacing:4px; 
 	padding-left:60px; 
 	padding-top:0px; 
 	cursor:pointer;
-	border:1px solid #999;
+	border:1px solid #6197fe;
 }
 
 .leftul li.selected{
-	background-color:#505050;
+	background-color:#6197fe;
 	color:white;
 }
 

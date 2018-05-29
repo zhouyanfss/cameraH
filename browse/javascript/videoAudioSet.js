@@ -56,7 +56,7 @@ function videoShow(num){
 	hankType.css("display", "none");
 	liChoose.css({"background-color": ""});
 	hankType.eq(num).css("display", "block");
-	liChoose.eq(num).css({"background-color": "#e9e6e6"});
+	liChoose.eq(num).css({"background-color": "#d6e8ff"});
 	
 	if( 2 == jsVideoNow)
 	{
